@@ -1,14 +1,42 @@
 package ch.bzz.reisebuero.model;
 
+import jakarta.activation.DataHandler;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Reise {
+    private Ferienziel ferienziel;
+
+    private String reiseUUID;
     private LocalDate datum;
     private BigDecimal preis;
-    private Ferienziel ferienziel;
     private Integer anzpers;
     private Integer bewertung;
+
+    public String getferienzielUUID() {
+        return getFerienziel().getFerienzielUUID();
+    }
+
+    /**
+     * creates a Publisher-object without the booklist
+     * @param publisherUUID
+     */
+    public void setferienzielUUID(String publisherUUID) {
+        setFerienziel( new Ferienziel());
+        Ferienziel ferienziel = DataHandler.getInstance().readPublisherByUUID(publisherUUID);
+        getFerienziel().setFerienzielUUID(ferienzielUUID);
+        getFerienziel().setFerienziel(Ferienziel.getferienziel());
+
+    }
+
+    public String getReiseUUID() {
+        return reiseUUID;
+    }
+
+    public void setreiseUUID(String reiseUUID) {
+        this.reiseUUID = reiseUUID;
+    }
 
     public LocalDate getDatum() {
         return datum;

@@ -1,0 +1,17 @@
+[
+    {
+        "streckeUUID": "1.0",
+        "distanz": "2.3",
+        "reiseUUID": "2.0"
+    },
+    {
+       "streckeUUID": "1.1",
+        "distanz": "4.9",
+        "reiseUUID": "2.1"
+    },
+    {
+        "streckeUUID": "1.2",
+        "distanz": "8.9",
+        "reiseUUID": "2.2"
+    }
+]
