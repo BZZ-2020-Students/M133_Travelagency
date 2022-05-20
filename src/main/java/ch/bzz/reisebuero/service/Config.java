@@ -1,8 +1,8 @@
 package ch.bzz.reisebuero.service;
 
 
-import jakarta.faces.application.Application;
 import jakarta.ws.rs.ApplicationPath;
+import jakarta.ws.rs.core.Application;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -16,7 +16,7 @@ import java.util.Properties;
 @ApplicationPath("/resource")
 
 public class Config extends Application {
-    private static final String PROPERTIES_PATH = "C:\\Github\\M133_Reisebuero\\testing\\resieList.properties";
+    private static final String PROPERTIES_PATH = "C:\\Github\\M133_Reisebuero\\testing\\reiseList.properties";
     private static Properties properties = null;
     /**
      * define all provider classes

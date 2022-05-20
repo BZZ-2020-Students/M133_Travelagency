@@ -1,11 +1,13 @@
 package ch.bzz.reisebuero.model;
 
-import jakarta.activation.DataHandler;
+import ch.bzz.reisebuero.data.DataHandler;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class Reise {
+    @JsonIgnore
     private Ferienziel ferienziel;
 
     private String reiseUUID;
@@ -20,13 +22,13 @@ public class Reise {
 
     /**
      * creates a Publisher-object without the booklist
-     * @param publisherUUID
+     * @param ferienzielUUID
      */
-    public void setferienzielUUID(String publisherUUID) {
+    public void setFerienzielUUID(String ferienzielUUID) {
         setFerienziel( new Ferienziel());
-        Ferienziel ferienziel = DataHandler.getInstance().readPublisherByUUID(publisherUUID);
+        Ferienziel ferienziel = DataHandler.getInstance().readferienzielbyUUID(ferienzielUUID);
         getFerienziel().setFerienzielUUID(ferienzielUUID);
-        getFerienziel().setFerienziel(Ferienziel.getferienziel());
+        getFerienziel().setFerienziel(ferienziel.getFerienziel());
 
     }
 
