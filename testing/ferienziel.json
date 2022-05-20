@@ -1,20 +1,20 @@
 [
     {
-        "FerienzielUUID": "3.0"
+        "FerienzielUUID": "3.0",
         "ort": "Thalwil",
-        "Strasse": "Dorfstrasse 33b"
+        "Strasse": "Dorfstrasse 33b",
         "Land": "Schweiz"
     },
     {
-       "FerienzielUUID": "3.1"
+       "FerienzielUUID": "3.1",
         "ort": "Paris",
-        "Strasse": "croissantstrasse 541d"
+        "Strasse": "croissantstrasse 541d",
         "Land": "Frankreich"
     },
     {
-        "FerienzielUUID": "3.2"
+        "FerienzielUUID": "3.2",
         "ort": "Madrid",
-        "Strasse": "Stierstrasse 123a"
+        "Strasse": "Stierstrasse 123a",
         "Land": "Spanien"
     }
 ]

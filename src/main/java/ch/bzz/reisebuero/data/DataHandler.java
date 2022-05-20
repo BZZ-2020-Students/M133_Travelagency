@@ -18,8 +18,8 @@ import java.util.List;
  */
 public class DataHandler {
     private static DataHandler instance = null;
-    private List<Ferienziel> ferienzielList;
     private List<Reise> reiseList;
+    private List<Ferienziel> ferienzielList;
 
     /**
      * private constructor defeats instantiation
