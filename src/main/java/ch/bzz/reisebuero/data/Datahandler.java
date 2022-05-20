@@ -5,6 +5,7 @@ package ch.bzz.reisebuero.data;
 import ch.bzz.reisebuero.model.Ferienziel;
 import ch.bzz.reisebuero.model.Reise;
 import ch.bzz.reisebuero.service.Config;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -51,7 +52,7 @@ public class DataHandler {
 
     /**
      * reads a book by its uuid
-     * @param bookUUID
+     * @param reiseUUID
      * @return the Book (null=not found)
      */
     public Reise readReisebyUUID(String reiseUUID) {
@@ -98,9 +99,9 @@ public class DataHandler {
                     Paths.get(path)
             );
             ObjectMapper objectMapper = new ObjectMapper();
-            Book[] books = objectMapper.readValue(jsonData, Book[].class);
-            for (Book book : books) {
-                getBookList().add(book);
+            Reise[] reisen = objectMapper.readValue(jsonData, Reise[].class);
+            for (Reise reise : reisen) {
+                getReiseList().add(reise);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -110,7 +111,7 @@ public class DataHandler {
     /**
      * reads the publishers from the JSON-file
      */
-    private void readPublisherJSON() {
+    private void readFerienzielJSON() {
         try {
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(
@@ -118,9 +119,9 @@ public class DataHandler {
                     )
             );
             ObjectMapper objectMapper = new ObjectMapper();
-            Publisher[] publishers = objectMapper.readValue(jsonData, Publisher[].class);
-            for (Publisher publisher : publishers) {
-                getPublisherList().add(publisher);
+            Ferienziel[] ferienziele = objectMapper.readValue(jsonData, Ferienziel[].class);
+            for (Ferienziel ferienziel : ferienziele) {
+                getFerienzielList().add(ferienziel);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
