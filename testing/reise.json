@@ -13,31 +13,11 @@
         "anzpers": "4",
         "bewertung": "2"
     },
-    {
-       "reiseUUID": "4.2",
-        "preis": "1720.50",
-        "ferienzielUUID": "3.2",
-        "anzpers": "2",
-        "bewertung": "1"
-
-      "reiseUUID": "4.0",
-      "preis": "720.50",
-      "ferienzielUUID": "3.0",
-      "anzpers": "3",
-      "bewertung": "5"
-    },
-    {
-      "reiseUUID": "4.1",
-      "preis": "320.50",
-      "ferienzielUUID": "3.1",
-      "anzpers": "4",
-      "bewertung": "2"
-    },
-    {
-      "reiseUUID": "4.2",
-      "preis": "1720.50",
-      "ferienzielUUID": "3.2",
-      "anzpers": "2",
-      "bewertung": "1"
-    }
+  {
+    "reiseUUID": "4.2",
+    "preis": "1720.50",
+    "ferienzielUUID": "3.2",
+    "anzpers": "2",
+    "bewertung": "1"
+  }
 ]
