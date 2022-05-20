@@ -1,7 +1,6 @@
 [
     {
         "reiseUUID": "4.0",
-        "datum": "24/11/2022",
         "preis": "720.50",
         "ferienzielUUID": "3.0",
         "anzpers": "3",
@@ -9,7 +8,6 @@
     },
     {
        "reiseUUID": "4.1",
-        "datum": "24/12/2022",
         "preis": "320.50",
         "ferienzielUUID": "3.1",
         "anzpers": "4",
@@ -17,7 +15,6 @@
     },
     {
        "reiseUUID": "4.2",
-        "datum": "24/01/2023",
         "preis": "1720.50",
         "ferienzielUUID": "3.2",
         "anzpers": "2",
