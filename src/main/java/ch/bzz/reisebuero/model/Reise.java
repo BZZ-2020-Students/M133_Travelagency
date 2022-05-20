@@ -11,7 +11,7 @@ public class Reise {
     private Ferienziel ferienziel;
 
     private String reiseUUID;
-    private LocalDate datum;
+    //private LocalDate datum;
     private BigDecimal preis;
     private Integer anzpers;
     private Integer bewertung;
@@ -40,13 +40,13 @@ public class Reise {
         this.reiseUUID = reiseUUID;
     }
 
-    public LocalDate getDatum() {
+    /*public LocalDate getDatum() {
         return datum;
     }
 
     public void setDatum(LocalDate datum) {
         this.datum = datum;
-    }
+    }*/
 
     public BigDecimal getPreis() {
         return preis;

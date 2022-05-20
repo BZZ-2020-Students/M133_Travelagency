@@ -1,5 +1,6 @@
 package ch.bzz.reisebuero.model;
 
+
 public class Ferienziel {
     private String ferienzielUUID;
     private String ferienziel;
