@@ -4,6 +4,7 @@ package ch.bzz.reisebuero.data;
 
 import ch.bzz.reisebuero.model.Ferienziel;
 import ch.bzz.reisebuero.model.Reise;
+import ch.bzz.reisebuero.model.Strecke;
 import ch.bzz.reisebuero.service.Config;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -20,6 +21,7 @@ public class DataHandler {
     private static DataHandler instance = null;
     private List<Reise> reiseList;
     private List<Ferienziel> ferienzielList;
+    private List<Strecke> streckeList;
 
     /**
      * private constructor defeats instantiation
@@ -29,6 +31,9 @@ public class DataHandler {
         readFerienzielJSON();
         setReiseList(new ArrayList<>());
         readReiseJSON();
+        setStreckeList(new ArrayList<>());
+        readStreckeJSON();
+
     }
 
     /**
@@ -127,6 +132,35 @@ public class DataHandler {
             ex.printStackTrace();
         }
     }
+
+    public List<Strecke> readallStrecke() {
+        return getStreckeList();
+    }
+
+    public Strecke readStreckebyUUID(String streckeUUID) {
+        Strecke strecke = null;
+        for (Strecke entry : getStreckeList()) {
+            if (entry.getStreckeUUID().equals(streckeUUID)) {
+                strecke = entry;
+            }
+        }
+        return strecke;
+    }
+    private void readStreckeJSON() {
+        try {
+            String path = Config.getProperty("streckeJSON");
+            byte[] jsonData = Files.readAllBytes(
+                    Paths.get(path)
+            );
+            ObjectMapper objectMapper = new ObjectMapper();
+            Strecke[] strecken = objectMapper.readValue(jsonData, Strecke[].class);
+            for (Strecke strecke : strecken) {
+                getStreckeList().add(strecke);
+            }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
     /**
      * gets bookList
      *
@@ -163,5 +197,11 @@ public class DataHandler {
         this.ferienzielList = ferienzielList;
     }
 
+    public List<Strecke> getStreckeList() {
+        return streckeList;
+    }
 
+    public void setStreckeList(List<Strecke> streckeList) {
+        this.streckeList = streckeList;
+    }
 }

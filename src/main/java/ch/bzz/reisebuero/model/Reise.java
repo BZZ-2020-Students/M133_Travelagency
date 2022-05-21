@@ -16,9 +16,21 @@ public class Reise {
 
     private Date datum;
 
-    private BigDecimal preis;
+    private Float preis;
     private Integer anzpers;
     private Integer bewertung;
+
+    public Reise(Ferienziel ferienziel, String reiseUUID, Date datum, Float preis, Integer anzpers, Integer bewertung) {
+        this.ferienziel = ferienziel;
+        this.reiseUUID = reiseUUID;
+        this.datum = datum;
+        this.preis = preis;
+        this.anzpers = anzpers;
+        this.bewertung = bewertung;
+    }
+    public Reise(){
+
+    }
 
     public String getferienzielUUID() {
         return getFerienziel().getFerienzielUUID();
@@ -52,11 +64,11 @@ public class Reise {
         this.datum = datum;
     }
 
-    public BigDecimal getPreis() {
+    public Float getPreis() {
         return preis;
     }
 
-    public void setPreis(BigDecimal preis) {
+    public void setPreis(Float preis) {
         this.preis = preis;
     }
 

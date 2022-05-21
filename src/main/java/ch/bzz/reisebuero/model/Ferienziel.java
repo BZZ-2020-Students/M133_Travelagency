@@ -9,6 +9,17 @@ public class Ferienziel {
     private String strasse;
     private String land;
 
+    public Ferienziel(String ferienzielUUID, String ferienziel, String ort, String strasse, String land) {
+        this.ferienzielUUID = ferienzielUUID;
+        this.ferienziel = ferienziel;
+        this.ort = ort;
+        this.strasse = strasse;
+        this.land = land;
+    }
+    public Ferienziel()
+    {
+
+    }
     public String getFerienzielUUID() {
         return ferienzielUUID;
     }

@@ -4,8 +4,14 @@ import java.math.BigDecimal;
 
 public class Strecke {
     private String streckeUUID;
-    private BigDecimal distanz;
+    private Float distanz;
     private Reise reise;
+
+    public Strecke(String streckeUUID, Float distanz, Reise reise) {
+        this.streckeUUID = streckeUUID;
+        this.distanz = distanz;
+        this.reise = reise;
+    }
 
     public String getStreckeUUID() {
         return streckeUUID;
@@ -15,11 +21,11 @@ public class Strecke {
         this.streckeUUID = streckeUUID;
     }
 
-    public BigDecimal getDistanz() {
+    public Float getDistanz() {
         return distanz;
     }
 
-    public void setDistanz(BigDecimal distanz) {
+    public void setDistanz(Float distanz) {
         this.distanz = distanz;
     }
 

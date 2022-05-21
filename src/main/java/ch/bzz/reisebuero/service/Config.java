@@ -16,7 +16,7 @@ import java.util.Properties;
 @ApplicationPath("/resource")
 
 public class Config extends Application {
-    private static final String PROPERTIES_PATH = "C:\\Github\\M133_Reisebuero\\testing\\reiseList.properties";
+    private static final String PROPERTIES_PATH = "C:/Github/M133_Reisebuero/testing/reiseList.properties";
     private static Properties properties = null;
     /**
      * define all provider classes
