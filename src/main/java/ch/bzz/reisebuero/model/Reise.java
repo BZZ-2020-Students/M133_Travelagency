@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Reise {
     @JsonIgnore
@@ -13,7 +14,7 @@ public class Reise {
 
     private String reiseUUID;
 
-    private LocalDate datum;
+    private Date datum;
 
     private BigDecimal preis;
     private Integer anzpers;
@@ -43,11 +44,11 @@ public class Reise {
         this.reiseUUID = reiseUUID;
     }
 
-    public LocalDate getDatum() {
+    public Date getDatum() {
         return datum;
     }
 
-    public void setDatum(LocalDate datum) {
+    public void setDatum(Date datum) {
         this.datum = datum;
     }
 
