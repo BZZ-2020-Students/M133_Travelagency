@@ -1,7 +1,7 @@
 package ch.bzz.reisebuero.service;
 
 import ch.bzz.reisebuero.data.DataHandler;
-import ch.bzz.reisebuero.model.Reise;
+import ch.bzz.reisebuero.model.Strecke;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
@@ -17,10 +17,10 @@ public class Streckeservice {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listStrecke(){
-        List<Reise> reiseList = DataHandler.getInstance().readallReise();
+        List<Strecke> streckeList = DataHandler.getInstance().readallStrecke();
         return Response
                 .status(200)
-                .entity(reiseList)
+                .entity(streckeList)
                 .build();
     }
 
@@ -28,12 +28,12 @@ public class Streckeservice {
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readReise(
-            @QueryParam("uuid") String reiseUUID
+            @QueryParam("uuid") String streckeUUID
     ){
-        Reise reise = DataHandler.getInstance().readReisebyUUID(reiseUUID);
+        Strecke strecke = DataHandler.getInstance().readStreckebyUUID(streckeUUID);
         return Response
                 .status(200)
-                .entity(reise)
+                .entity(strecke)
                 .build();
     }
 }
