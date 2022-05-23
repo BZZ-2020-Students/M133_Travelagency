@@ -13,6 +13,9 @@ public class Strecke {
     @JsonIgnore
     private Reise reise;
 
+    /**
+     * constructor
+     * */
     public Strecke(String streckeUUID, Float distanz, Reise reise) {
         this.streckeUUID = streckeUUID;
         this.distanz = distanz;
@@ -24,11 +27,17 @@ public class Strecke {
     public Strecke(){
 
     }
-    
+    /**
+     * gets reiseuuid
+     * @return value of reiseuuid
+     */
     public String getReiseUUID() {
         return getReise().getReiseUUID();
     }
-
+    /**
+     * creates a reise-object without the reiseList
+     * @param reiseUUID
+     */
     public void setReiseUUID(String reiseUUID) {
         setReise( new Reise());
         Reise reise = DataHandler.getInstance().readReisebyUUID(reiseUUID);

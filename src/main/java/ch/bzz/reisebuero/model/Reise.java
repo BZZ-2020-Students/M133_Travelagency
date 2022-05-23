@@ -25,7 +25,7 @@ public class Reise {
     private Integer bewertung;
 
     /**
-    *
+    *constructor
     * */
 
     public Reise(Ferienziel ferienziel, String reiseUUID, Date datum, Float preis, Integer anzpers, Integer bewertung) {
