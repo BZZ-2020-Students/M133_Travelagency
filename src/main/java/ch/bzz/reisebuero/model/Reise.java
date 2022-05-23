@@ -3,19 +3,13 @@ package ch.bzz.reisebuero.model;
 
 import ch.bzz.reisebuero.data.DataHandler;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.Date;
 
 public class Reise {
     @JsonIgnore
     private Ferienziel ferienziel;
-
     private String reiseUUID;
-
     private Date datum;
-
     private Float preis;
     private Integer anzpers;
     private Integer bewertung;

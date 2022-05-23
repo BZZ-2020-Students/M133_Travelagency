@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.Date;
 import java.util.UUID;
-import java.util.Vector;
 
 public class CreateJSON {
 
