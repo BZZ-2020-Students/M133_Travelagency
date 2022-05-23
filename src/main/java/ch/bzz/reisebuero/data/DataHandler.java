@@ -95,7 +95,7 @@ public class DataHandler {
     }
 
     /**
-     * reads the books from the JSON-file
+     * reads the reise from the JSON-file
      */
     private void readReiseJSON() {
         try {
@@ -114,7 +114,7 @@ public class DataHandler {
     }
 
     /**
-     * reads the publishers from the JSON-file
+     * reads the ferienziel from the JSON-file
      */
     private void readFerienzielJSON() {
         try {
@@ -162,7 +162,7 @@ public class DataHandler {
         }
     }
     /**
-     * gets bookList
+     * gets reiselist
      *
      * @return value of bookList
      */
@@ -171,7 +171,7 @@ public class DataHandler {
     }
 
     /**
-     * sets bookList
+     * sets reiselist
      *
      * @param reiseList the value to set
      */
@@ -180,27 +180,38 @@ public class DataHandler {
     }
 
     /**
-     * gets publisherList
+     * gets ferienziellist
      *
-     * @return value of publisherList
+     * @return value of ferienzielList
      */
     private List<Ferienziel> getFerienzielList() {
         return ferienzielList;
     }
 
     /**
-     * sets publisherList
+     * sets ferienziellist
      *
      * @param ferienzielList the value to set
      */
     private void setFerienzielList(List<Ferienziel> ferienzielList) {
         this.ferienzielList = ferienzielList;
     }
+    /**
+     * gets ferienziellist
+     *
+     * @return value of ferienzielList
+     */
 
     public List<Strecke> getStreckeList() {
         return streckeList;
     }
 
+
+    /**
+     * sets streckeList
+     *
+     * @param streckeList the value to set
+     */
     public void setStreckeList(List<Strecke> streckeList) {
         this.streckeList = streckeList;
     }
