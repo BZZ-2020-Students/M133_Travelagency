@@ -1,17 +1,1 @@
-[
-    {
-        "streckeUUID": "1.0",
-        "distanz": "2.3",
-        "reiseUUID": "2.0"
-    },
-    {
-       "streckeUUID": "1.1",
-        "distanz": "4.9",
-        "reiseUUID": "2.1"
-    },
-    {
-        "streckeUUID": "1.2",
-        "distanz": "8.9",
-        "reiseUUID": "2.2"
-    }
-]
+[{"streckeUUID":"7985033c-e775-4b2a-aa4f-0e495fd43352","distanz":34.0,"reise":{"reiseUUID":"a4e0db6f-4ed2-42c8-abb9-b59405c48e25","datum":1653125960667,"preis":4.5,"anzpers":21,"bewertung":3,"ferienzielUUID":"eda4dadf-91f2-4482-9b6d-d13471d8ad4c"}},{"streckeUUID":"13197ff8-8a21-49a5-b1ca-c7485355e57a","distanz":65.0,"reise":{"reiseUUID":"75555347-0be0-4c85-b7b6-84689a26f7a0","datum":1653125960667,"preis":0.5,"anzpers":6,"bewertung":5,"ferienzielUUID":"07c4655c-6a39-465d-81a2-91e3b709e39a"}}]
