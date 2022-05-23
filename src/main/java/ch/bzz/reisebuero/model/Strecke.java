@@ -18,9 +18,13 @@ public class Strecke {
         this.distanz = distanz;
         this.reise = reise;
     }
+    /**
+     * empty constructor
+     * */
     public Strecke(){
 
     }
+    
     public String getReiseUUID() {
         return getReise().getReiseUUID();
     }
