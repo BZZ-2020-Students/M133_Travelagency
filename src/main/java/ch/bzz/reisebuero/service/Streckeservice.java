@@ -2,10 +2,9 @@ package ch.bzz.reisebuero.service;
 
 import ch.bzz.reisebuero.data.DataHandler;
 import ch.bzz.reisebuero.model.Strecke;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.QueryParam;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -18,19 +17,32 @@ public class Streckeservice {
     @Produces(MediaType.APPLICATION_JSON)
     public Response listStrecke(){
         List<Strecke> streckeList = DataHandler.getInstance().readallStrecke();
-        return Response
-                .status(200)
-                .entity(streckeList)
-                .build();
+        try {
+            return Response
+                    .status(200)
+                    .entity(new ObjectMapper().writeValueAsString(streckeList))
+                    .build();
+        } catch (JsonProcessingException e) {
+            return Response
+                    .status(500)
+                    .entity("Fehler beim Serialisieren der Strecken")
+                    .build();
+        }
     }
 
     @GET
-    @Path("read")
+    @Path("read/{uuid}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readReise(
-            @QueryParam("uuid") String streckeUUID
+            @PathParam("uuid") String streckeUUID
     ){
         Strecke strecke = DataHandler.getInstance().readStreckebyUUID(streckeUUID);
+        if(strecke== null){
+            return Response
+                    .status(404)
+                    .entity("Strecke nicht gefunden")
+                    .build();
+        }
         return Response
                 .status(200)
                 .entity(strecke)

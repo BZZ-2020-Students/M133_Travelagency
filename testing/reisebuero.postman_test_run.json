@@ -1,0 +1,297 @@
+{
+	"id": "40589104-d932-419a-b9cb-ff5e71928918",
+	"name": "reisebuero",
+	"timestamp": "2022-05-23T19:20:07.007Z",
+	"collection_id": "20899708-b1bcf4b8-3369-47e6-9429-da25d7820fde",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 9,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "6c28d306-4638-4898-93b7-fcef113f611e",
+			"name": "reise abfrage list",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/reise/list",
+			"time": 19,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				19
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "47ddf317-eaf9-48d2-a95d-919dbf57f0b7",
+			"name": "reise abfrage read successful",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/reise/read/12d14219-d212-4aef-ab44-3f88202024b1",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "53850ec7-d6a4-421a-b897-456c42c5639b",
+			"name": "reise abfrage read failed",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/reise/read/5dfba463-aaf-4794-9bde-904fb10be3a",
+			"time": 10,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status test 404": true
+			},
+			"testPassFailCounts": {
+				"Status test 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Status test 404": true
+				}
+			]
+		},
+		{
+			"id": "ff9963b7-6cf6-4115-8723-a5ea3e678c6d",
+			"name": "ferienziel abfrage list",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/ferienziel/list",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "7570b4b7-f82b-4d02-9d01-1b68674aa4ee",
+			"name": "ferienziel abfrage read successful",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/ferienziel/read/63d0620e-2f52-4f09-8231-39fd99d05ffc",
+			"time": 11,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "56f37aba-a7e8-4fee-986e-a6f582148d79",
+			"name": "ferienziel abfrage read failed",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/ferienziel/read/902d9927-15b8-4dd1-b07b-930e6a0f773",
+			"time": 9,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status test 404": true
+			},
+			"testPassFailCounts": {
+				"Status test 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status test 404": true
+				}
+			]
+		},
+		{
+			"id": "b58f9e4d-5e4d-4635-b80c-8a46e6ae7f0c",
+			"name": "strecken abfrage list",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/strecke/list",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "0bffa2e8-e2e0-4c1d-9619-ba20d2ab93df",
+			"name": "strecken abfrage read successful",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/strecke/read/fef1668c-ffac-43b1-8821-71d8ab01f02d",
+			"time": 15,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				15
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "5ea72c07-3302-40eb-8f4a-9958144e64a0",
+			"name": "strecken abfrage read failed",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/strecke/read/fef1668c-ffac-43b1-8821-71d8ab01f0",
+			"time": 9,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status test 404": true
+			},
+			"testPassFailCounts": {
+				"Status test 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status test 404": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 109,
+	"collection": {
+		"requests": [
+			{
+				"id": "6c28d306-4638-4898-93b7-fcef113f611e",
+				"method": "GET"
+			},
+			{
+				"id": "47ddf317-eaf9-48d2-a95d-919dbf57f0b7",
+				"method": "GET"
+			},
+			{
+				"id": "53850ec7-d6a4-421a-b897-456c42c5639b",
+				"method": "GET"
+			},
+			{
+				"id": "ff9963b7-6cf6-4115-8723-a5ea3e678c6d",
+				"method": "GET"
+			},
+			{
+				"id": "7570b4b7-f82b-4d02-9d01-1b68674aa4ee",
+				"method": "GET"
+			},
+			{
+				"id": "56f37aba-a7e8-4fee-986e-a6f582148d79",
+				"method": "GET"
+			},
+			{
+				"id": "b58f9e4d-5e4d-4635-b80c-8a46e6ae7f0c",
+				"method": "GET"
+			},
+			{
+				"id": "0bffa2e8-e2e0-4c1d-9619-ba20d2ab93df",
+				"method": "GET"
+			},
+			{
+				"id": "5ea72c07-3302-40eb-8f4a-9958144e64a0",
+				"method": "GET"
+			}
+		]
+	}
+}

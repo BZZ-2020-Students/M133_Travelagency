@@ -15,14 +15,16 @@ public class CreateJSON {
 
 
     public static void main(String[] args) {
-        Reise[] reise = {
-                new Reise(new Ferienziel(UUID.randomUUID().toString(), "franz", "meier", "bachweg","phillip"), UUID.randomUUID().toString(), new Date(), 0.5f, 6, 5),
-                new Reise(new Ferienziel(UUID.randomUUID().toString(), "meier", "franz", "deichweg","marc"), UUID.randomUUID().toString(), new Date(), 4.5f, 21, 3),        };
 
         Ferienziel[] ferienziel = {
                 new Ferienziel(UUID.randomUUID().toString(), "franz", "meier", "bachweg","phillip"),
                 new Ferienziel(UUID.randomUUID().toString(), "hans", "mueller", "strasse","marc")
         };
+        Reise[] reise = {
+                new Reise (ferienziel[0],UUID.randomUUID().toString(), new Date(), 0.5f, 6, 5),
+                new Reise(ferienziel[1], UUID.randomUUID().toString(), new Date(), 4.5f, 21, 3),
+        };
+
 
         Strecke[] strecken = {
                 new Strecke(UUID.randomUUID().toString(),34f, reise[1]),

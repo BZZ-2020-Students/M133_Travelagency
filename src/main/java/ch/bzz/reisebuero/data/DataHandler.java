@@ -84,7 +84,7 @@ public class DataHandler {
      * @param ferienzielUUID
      * @return the ferienziel (null=not found)
      */
-    public Ferienziel readferienzielbyUUID(String ferienzielUUID) {
+    public Ferienziel readFerienzielbyUUID(String ferienzielUUID) {
         Ferienziel ferienziel = null;
         for (Ferienziel entry : getFerienzielList()) {
             if (entry.getFerienzielUUID().equals(ferienzielUUID)) {

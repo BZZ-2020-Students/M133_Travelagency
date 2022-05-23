@@ -2,10 +2,9 @@ package ch.bzz.reisebuero.service;
 
 import ch.bzz.reisebuero.data.DataHandler;
 import ch.bzz.reisebuero.model.Ferienziel;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.QueryParam;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -18,22 +17,32 @@ public class Ferienzielservice {
     @Produces(MediaType.APPLICATION_JSON)
     public Response listFerienziel(){
         List<Ferienziel> ferienzielList = DataHandler.getInstance().readAllFerienziel();
-        return Response
-                .status(200)
-                .entity(ferienzielList)
-                .build();
+        try {
+            return Response
+                    .status(200)
+                    .entity(new ObjectMapper().writeValueAsString(ferienzielList))
+                    .build();
+        } catch (JsonProcessingException e) {
+            return Response
+                    .status(500)
+                    .entity("Fehler beim Serialisieren der Ferienziele")
+                    .build();
+        }
     }
 
     @GET
-    @Path("read")
+    @Path("read/{uuid}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readFerienziel(
-            @QueryParam("uuid") String ferienzielUUID
+            @PathParam("uuid") String ferienzielUUID
     ){
         int httpStatus = 200;
-        Ferienziel ferienziel = DataHandler.getInstance().readferienzielbyUUID(ferienzielUUID);
+        Ferienziel ferienziel = DataHandler.getInstance().readFerienzielbyUUID(ferienzielUUID);
         if(ferienziel== null){
-            httpStatus=410;
+            return Response
+                    .status(404)
+                    .entity("ferienziel nicht gefunden")
+                    .build();
         }
         return Response
                 .status(200)

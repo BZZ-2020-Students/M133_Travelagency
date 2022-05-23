@@ -1,10 +1,16 @@
 package ch.bzz.reisebuero.model;
 
-import java.math.BigDecimal;
+import ch.bzz.reisebuero.data.DataHandler;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
 public class Strecke {
     private String streckeUUID;
     private Float distanz;
+    @JsonIgnore
     private Reise reise;
 
     public Strecke(String streckeUUID, Float distanz, Reise reise) {
@@ -12,28 +18,17 @@ public class Strecke {
         this.distanz = distanz;
         this.reise = reise;
     }
+    public Strecke(){
 
-    public String getStreckeUUID() {
-        return streckeUUID;
+    }
+    public String getReiseUUID() {
+        return getReise().getReiseUUID();
     }
 
-    public void setStreckeUUID(String streckeUUID) {
-        this.streckeUUID = streckeUUID;
-    }
-
-    public Float getDistanz() {
-        return distanz;
-    }
-
-    public void setDistanz(Float distanz) {
-        this.distanz = distanz;
-    }
-
-    public Reise getReise() {
-        return reise;
-    }
-
-    public void setReise(Reise reise) {
-        this.reise = reise;
+    public void setReiseUUID(String reiseUUID) {
+        setReise( new Reise());
+        Reise reise = DataHandler.getInstance().readReisebyUUID(reiseUUID);
+        getReise().setReiseUUID(reiseUUID);
+        setReise(reise);
     }
 }

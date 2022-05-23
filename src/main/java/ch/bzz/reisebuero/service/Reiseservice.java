@@ -2,10 +2,9 @@ package ch.bzz.reisebuero.service;
 
 import ch.bzz.reisebuero.data.DataHandler;
 import ch.bzz.reisebuero.model.Reise;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.QueryParam;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -18,19 +17,32 @@ public class Reiseservice {
     @Produces(MediaType.APPLICATION_JSON)
     public Response listReise(){
         List<Reise> reiseList = DataHandler.getInstance().readallReise();
-        return Response
-                .status(200)
-                .entity(reiseList)
-                .build();
+        try {
+            return Response
+                    .status(200)
+                    .entity(new ObjectMapper().writeValueAsString(reiseList))
+                    .build();
+        } catch (JsonProcessingException e) {
+            return Response
+                    .status(500)
+                    .entity("Fehler beim Serialisieren der Reisen")
+                    .build();
+        }
     }
 
     @GET
-    @Path("read")
+    @Path("read/{uuid}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response readReise(
-            @QueryParam("uuid") String reiseUUID
+            @PathParam("uuid") String reiseUUID
     ){
         Reise reise = DataHandler.getInstance().readReisebyUUID(reiseUUID);
+        if (reise == null) {
+            return Response
+                    .status(404)
+                    .entity("Reise nicht gefunden")
+                    .build();
+        }
         return Response
                 .status(200)
                 .entity(reise)
