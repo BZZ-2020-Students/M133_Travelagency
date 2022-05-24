@@ -48,7 +48,7 @@ public class DataHandler {
 
 
     /**
-     * reads all books
+     * reads all reise
      * @return list of books
      */
     public List<Reise> readallReise() {
@@ -56,9 +56,9 @@ public class DataHandler {
     }
 
     /**
-     * reads a book by its uuid
+     * reads a reise by its uuid
      * @param reiseUUID
-     * @return the Book (null=not found)
+     * @return the reise (null=not found)
      */
     public Reise readReisebyUUID(String reiseUUID) {
         Reise reise = null;
@@ -71,8 +71,8 @@ public class DataHandler {
     }
 
     /**
-     * reads all Publishers
-     * @return list of publishers
+     * reads all ferienziele
+     * @return list of ferienziele
      */
     public List<Ferienziel> readAllFerienziel() {
 
@@ -80,7 +80,7 @@ public class DataHandler {
     }
 
     /**
-     * reads a publisher by its uuid
+     * reads a ferienziele by its uuid
      * @param ferienzielUUID
      * @return the ferienziel (null=not found)
      */
@@ -95,7 +95,7 @@ public class DataHandler {
     }
 
     /**
-     * reads the reise from the JSON-file
+     * reads the ferienziel from the JSON-file
      */
     private void readReiseJSON() {
         try {
@@ -133,10 +133,17 @@ public class DataHandler {
         }
     }
 
+    /**
+     * reads all strecken
+     * @return list of strecken
+     */
     public List<Strecke> readallStrecke() {
         return getStreckeList();
     }
 
+    /**
+     * reads the strecke from the JSON-file
+     */
     public Strecke readStreckebyUUID(String streckeUUID) {
         Strecke strecke = null;
         for (Strecke entry : getStreckeList()) {
@@ -146,6 +153,10 @@ public class DataHandler {
         }
         return strecke;
     }
+
+    /**
+     * reads the strecke from the JSON-file
+     */
     private void readStreckeJSON() {
         try {
             String path = Config.getProperty("streckeJSON");
@@ -197,9 +208,9 @@ public class DataHandler {
         this.ferienzielList = ferienzielList;
     }
     /**
-     * gets ferienziellist
+     * gets streckenlist
      *
-     * @return value of ferienzielList
+     * @return value of streckenlist
      */
 
     public List<Strecke> getStreckeList() {
