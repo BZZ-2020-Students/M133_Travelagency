@@ -6,9 +6,12 @@ import ch.bzz.reisebuero.model.Ferienziel;
 import ch.bzz.reisebuero.model.Reise;
 import ch.bzz.reisebuero.model.Strecke;
 import ch.bzz.reisebuero.service.Config;
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -19,9 +22,9 @@ import java.util.List;
  */
 public class DataHandler {
     private static DataHandler instance = null;
-    private List<Reise> reiseList;
-    private List<Ferienziel> ferienzielList;
-    private List<Strecke> streckeList;
+    private static List<Reise> reiseList;
+    private static List<Ferienziel> ferienzielList;
+    private static List<Strecke> streckeList;
 
     /**
      * private constructor defeats instantiation
@@ -33,7 +36,6 @@ public class DataHandler {
         readReiseJSON();
         setStreckeList(new ArrayList<>());
         readStreckeJSON();
-
     }
 
     /**
@@ -60,7 +62,7 @@ public class DataHandler {
      * @param reiseUUID
      * @return the reise (null=not found)
      */
-    public Reise readReisebyUUID(String reiseUUID) {
+    public static Reise readReisebyUUID(String reiseUUID) {
         Reise reise = null;
         for (Reise entry : getReiseList()) {
             if (entry.getReiseUUID().equals(reiseUUID)) {
@@ -68,6 +70,96 @@ public class DataHandler {
             }
         }
         return reise;
+    }
+
+    /**
+     * inserts a new book into the reiselist
+     *
+     * @param reise the reise to be saved
+     */
+    public static void insertReise(Reise reise) {
+        getReiseList().add(reise);
+        writeReiseJSON();
+    }
+
+    /**
+     * updates the reiseList
+     */
+    public static void updateReise() {
+        writeReiseJSON();
+    }
+
+    /**
+     * deletes a book identified by the reiseUUID
+     * @param reiseUUID  the key
+     * @return  success=true/false
+     */
+    public static boolean deleteReise(String reiseUUID) {
+        Reise reise = readReisebyUUID(reiseUUID);
+        if (reise != null) {
+            getReiseList().remove(reise);
+            writeReiseJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+    /**
+     * inserts a new publisher into the reiseList
+     *
+     * @param ferienziel the ferienziel to be saved
+     */
+    public static void insertFerienziel(Ferienziel ferienziel) {
+        getFerienzielList().add(ferienziel);
+        writeFerienzielJSON();
+    }
+    /**
+     * updates the ferienzielList
+     */
+    public static void updateFerienziel() {
+        writeFerienzielJSON();
+    }
+
+    /**
+     * deletes a publisher identified by the ferienzielUUID
+     * @param ferienzielUUID  the key
+     * @return  success=true/false
+     */
+    public static boolean deleteFerienziel(String ferienzielUUID) {
+        Ferienziel ferienziel = readFerienzielbyUUID(ferienzielUUID);
+        if (ferienziel != null) {
+            getFerienzielList().remove(ferienziel);
+            writeFerienzielJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public static void insertStrecke(Strecke strecke) {
+        getStreckeList().add(strecke);
+        writeStreckeJSON();
+    }
+    /**
+     * updates the StreckeList
+     */
+    public static void updateStrecke() {
+        writeStreckeJSON();
+    }
+
+    /**
+     * deletes a publisher identified by the ferienzielUUID
+     * @param ferienzielUUID  the key
+     * @return  success=true/false
+     */
+    public static boolean deleteStrecke(String streckeUUID) {
+        Strecke strecke = readStreckebyUUID(streckeUUID);
+        if (strecke != null) {
+            getFerienzielList().remove(strecke);
+            writeStreckeJSON();
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -84,7 +176,7 @@ public class DataHandler {
      * @param ferienzielUUID
      * @return the ferienziel (null=not found)
      */
-    public Ferienziel readFerienzielbyUUID(String ferienzielUUID) {
+    public static Ferienziel readFerienzielbyUUID(String ferienzielUUID) {
         Ferienziel ferienziel = null;
         for (Ferienziel entry : getFerienzielList()) {
             if (entry.getFerienzielUUID().equals(ferienzielUUID)) {
@@ -97,7 +189,7 @@ public class DataHandler {
     /**
      * reads the ferienziel from the JSON-file
      */
-    private void readReiseJSON() {
+    private static void readReiseJSON() {
         try {
             String path = Config.getProperty("reiseJSON");
             byte[] jsonData = Files.readAllBytes(
@@ -112,11 +204,29 @@ public class DataHandler {
             ex.printStackTrace();
         }
     }
+    /**
+     * writes the bookList to the JSON-file
+     */
+    private static void writeReiseJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String reisePath = Config.getProperty("reiseJSON");
+        try {
+            fileOutputStream = new FileOutputStream(reisePath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getReiseList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
 
     /**
      * reads the ferienziel from the JSON-file
      */
-    private void readFerienzielJSON() {
+    private static void readFerienzielJSON() {
         try {
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(
@@ -133,6 +243,42 @@ public class DataHandler {
         }
     }
 
+
+    /**
+     * writes the publisherList to the JSON-file
+     */
+    private static void writeFerienzielJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String ferienzielPath = Config.getProperty("ferienzielJSON");
+        try {
+            fileOutputStream = new FileOutputStream(ferienzielPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getFerienzielList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    private static void writeStreckeJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String streckePath = Config.getProperty("streckeJSON");
+        try {
+            fileOutputStream = new FileOutputStream(streckePath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getStreckeList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
     /**
      * reads all strecken
      * @return list of strecken
@@ -144,7 +290,7 @@ public class DataHandler {
     /**
      * reads the strecke from the JSON-file
      */
-    public Strecke readStreckebyUUID(String streckeUUID) {
+    public static Strecke readStreckebyUUID(String streckeUUID) {
         Strecke strecke = null;
         for (Strecke entry : getStreckeList()) {
             if (entry.getStreckeUUID().equals(streckeUUID)) {
@@ -157,7 +303,7 @@ public class DataHandler {
     /**
      * reads the strecke from the JSON-file
      */
-    private void readStreckeJSON() {
+    private static void readStreckeJSON() {
         try {
             String path = Config.getProperty("streckeJSON");
             byte[] jsonData = Files.readAllBytes(
@@ -172,12 +318,16 @@ public class DataHandler {
             ex.printStackTrace();
         }
     }
-    /**
-     * gets reiselist
-     *
-     * @return value of bookList
-     */
-    private List<Reise> getReiseList() {
+           /**
+         * gets reiselist
+         *
+         * @return value of bookList
+         */
+    private static List<Reise> getReiseList() {
+        if (reiseList == null) {
+            setReiseList(new ArrayList<>());
+            readReiseJSON();
+        }
         return reiseList;
     }
 
@@ -186,8 +336,8 @@ public class DataHandler {
      *
      * @param reiseList the value to set
      */
-    private void setReiseList(List<Reise> reiseList) {
-        this.reiseList = reiseList;
+    private static void setReiseList(List<Reise> reiseList) {
+        DataHandler.reiseList = reiseList;
     }
 
     /**
@@ -195,7 +345,13 @@ public class DataHandler {
      *
      * @return value of ferienzielList
      */
-    private List<Ferienziel> getFerienzielList() {
+    private static List<Ferienziel> getFerienzielList() {
+        if (ferienzielList == null) {
+            setFerienzielList(new ArrayList<>());
+            readFerienzielJSON();
+            readReiseJSON();
+        }
+
         return ferienzielList;
     }
 
@@ -204,8 +360,8 @@ public class DataHandler {
      *
      * @param ferienzielList the value to set
      */
-    private void setFerienzielList(List<Ferienziel> ferienzielList) {
-        this.ferienzielList = ferienzielList;
+    private static void setFerienzielList(List<Ferienziel> ferienzielList) {
+        DataHandler.ferienzielList = ferienzielList;
     }
     /**
      * gets streckenlist
@@ -213,7 +369,13 @@ public class DataHandler {
      * @return value of streckenlist
      */
 
-    public List<Strecke> getStreckeList() {
+    public static List<Strecke> getStreckeList() {
+        if (streckeList == null) {
+            setStreckeList(new ArrayList<>());
+            readStreckeJSON();
+            readReiseJSON();
+        }
+
         return streckeList;
     }
 
@@ -223,7 +385,7 @@ public class DataHandler {
      *
      * @param streckeList the value to set
      */
-    public void setStreckeList(List<Strecke> streckeList) {
-        this.streckeList = streckeList;
+    public static void setStreckeList(List<Strecke> streckeList) {
+        DataHandler.streckeList = streckeList;
     }
 }

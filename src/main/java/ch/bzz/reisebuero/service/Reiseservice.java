@@ -48,4 +48,19 @@ public class Reiseservice {
                 .entity(reise)
                 .build();
     }
+    @DELETE
+    @Path("delete/{uuid}")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response deleteReise(
+            @PathParam("uuid") String reiseUUID
+    ){
+        int httpStatus = 200;
+        if(!DataHandler.deleteReise(reiseUUID)){
+            httpStatus = 410;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("")
+                .build();
+    }
 }

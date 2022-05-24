@@ -1,1 +1,18 @@
-[{"reiseUUID":"12d14219-d212-4aef-ab44-3f88202024b1","datum":1653333354077,"preis":0.5,"anzpers":6,"bewertung":5,"ferienzielUUID":"63d0620e-2f52-4f09-8231-39fd99d05ffc"},{"reiseUUID":"9edeffec-90e5-4b97-993c-7b27a17696f1","datum":1653333354077,"preis":4.5,"anzpers":21,"bewertung":3,"ferienzielUUID":"98845638-3e8d-4acb-b1e3-5c4cfcd7e418"}]
+[
+  {
+    "reiseUUID": "bc3f1b87-e7e2-435d-8740-3542c91cc14d",
+    "datum": 1653380685280,
+    "preis": 0.5,
+    "anzpers": 6,
+    "bewertung": 5,
+    "ferienzielUUID": "9d09bf2c-b1d6-4eae-acf0-b7bf7ce9adee"
+  },
+  {
+    "reiseUUID": "5e7882ac-4f7f-44e1-a513-a3e8b40c599f",
+    "datum": 1653380685280,
+    "preis": 4.5,
+    "anzpers": 21,
+    "bewertung": 3,
+    "ferienzielUUID": "a6d3ab7b-56b9-4da0-be0f-3adc62441fe9"
+  }
+]

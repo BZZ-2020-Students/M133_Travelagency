@@ -1,6 +1,7 @@
 package ch.bzz.reisebuero.service;
 
 import ch.bzz.reisebuero.data.DataHandler;
+import ch.bzz.reisebuero.model.Ferienziel;
 import ch.bzz.reisebuero.model.Strecke;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -36,7 +37,7 @@ public class Streckeservice {
     public Response readReise(
             @PathParam("uuid") String streckeUUID
     ){
-        Strecke strecke = DataHandler.getInstance().readStreckebyUUID(streckeUUID);
+        Strecke strecke = DataHandler.readStreckebyUUID(streckeUUID);
         if(strecke== null){
             return Response
                     .status(404)
