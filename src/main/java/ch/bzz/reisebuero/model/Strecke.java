@@ -24,7 +24,7 @@ public class Strecke {
     public Strecke(){
 
     }
-    
+
     public String getReiseUUID() {
         return getReise().getReiseUUID();
     }
