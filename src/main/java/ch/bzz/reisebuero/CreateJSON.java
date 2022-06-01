@@ -17,8 +17,8 @@ public class CreateJSON {
     public static void main(String[] args) {
 
         Ferienziel[] ferienziel = {
-                new Ferienziel(UUID.randomUUID().toString(), "franz", "meier", "bachweg","phillip"),
-                new Ferienziel(UUID.randomUUID().toString(), "hans", "mueller", "strasse","marc")
+                new Ferienziel(UUID.randomUUID().toString(), "meier", "bachweg","phillip"),
+                new Ferienziel(UUID.randomUUID().toString(), "mueller", "strasse","marc")
         };
         Reise[] reise = {
                 new Reise (ferienziel[0],UUID.randomUUID().toString(), new Date(), 0.5f, 6, 5),

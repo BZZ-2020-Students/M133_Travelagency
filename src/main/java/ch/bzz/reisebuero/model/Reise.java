@@ -48,6 +48,7 @@ public class Reise {
      */
 
     public String getFerienzielUUID() {
+        if (getFerienziel()== null) return null;
         return getFerienziel().getFerienzielUUID();
     }
 
@@ -56,14 +57,12 @@ public class Reise {
      * @param ferienzielUUID
      */
     public void setFerienzielUUID(String ferienzielUUID) {
-        setFerienziel( new Ferienziel());
-        Ferienziel ferienziel = DataHandler.getInstance().readFerienzielbyUUID(ferienzielUUID);
-        if(ferienziel != null){
-        getFerienziel().setFerienzielUUID(ferienzielUUID);
-        setFerienziel(ferienziel);
-        }
-        //System.out.println("ferienziel = " + ferienziel);
-        //setFerienziel(ferienziel);
+        setFerienziel(new Ferienziel());
+        Ferienziel ferienziel = DataHandler.readFerienzielbyUUID(ferienzielUUID);
+        getFerienziel().setFerienzielUUID(ferienziel.getFerienzielUUID());
+        getFerienziel().setLand(ferienziel.getLand());
+        getFerienziel().setStrasse(ferienziel.getStrasse());
+        getFerienziel().setOrt(ferienziel.getOrt());
     }
 
 

@@ -7,7 +7,9 @@ import jakarta.ws.rs.core.Application;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashSet;
 import java.util.Properties;
+import java.util.Set;
 
 /**
  * configure the web services and properties
@@ -16,13 +18,22 @@ import java.util.Properties;
 @ApplicationPath("/resource")
 
 public class Config extends Application {
-    private static final String PROPERTIES_PATH = "C:/Github/M133_Reisebuero/testing/reiseList.properties";
+    private static final String PROPERTIES_PATH = "C:\\Github\\M133_Reisebuero\\testing\\reiseList.properties";
     private static Properties properties = null;
     /**
      * define all provider classes
      *
      * @return set of classes
      */
+    @Override
+    public Set<Class<?>> getClasses() {
+        HashSet providers = new HashSet<Class<?>>();
+        providers.add(Reiseservice.class);
+        providers.add(Ferienzielservice.class);
+        providers.add(Streckeservice.class);
+        providers.add(TestService.class);
+        return providers;
+    }
 
     public static String getProperty(String property) {
         if (Config.properties == null) {

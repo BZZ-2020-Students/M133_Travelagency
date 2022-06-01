@@ -37,7 +37,7 @@ public class Ferienzielservice {
             @PathParam("uuid") String ferienzielUUID
     ){
         int httpStatus = 200;
-        Ferienziel ferienziel = DataHandler.getInstance().readFerienzielbyUUID(ferienzielUUID);
+        Ferienziel ferienziel = DataHandler.readFerienzielbyUUID(ferienzielUUID);
         if(ferienziel== null){
             return Response
                     .status(404)

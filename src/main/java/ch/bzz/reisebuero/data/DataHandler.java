@@ -5,6 +5,7 @@ package ch.bzz.reisebuero.data;
 import ch.bzz.reisebuero.model.Ferienziel;
 import ch.bzz.reisebuero.model.Reise;
 import ch.bzz.reisebuero.model.Strecke;
+
 import ch.bzz.reisebuero.service.Config;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -53,13 +54,12 @@ public class DataHandler {
      * reads all reise
      * @return list of books
      */
-    public List<Reise> readallReise() {
+    public static List<Reise> readallReise() {
         return getReiseList();
     }
 
     /**
      * reads a reise by its uuid
-     * @param reiseUUID
      * @return the reise (null=not found)
      */
     public static Reise readReisebyUUID(String reiseUUID) {
@@ -104,6 +104,31 @@ public class DataHandler {
             return false;
         }
     }
+
+
+
+    /**
+     * reads all ferienziele
+     * @return list of ferienziele
+     */
+    public List<Ferienziel> readAllFerienziel() {
+
+        return getFerienzielList();
+    }
+
+    /**
+     * reads a ferienziele by its uuid
+     * @return the ferienziel (null=not found)
+     */
+    public static Ferienziel readFerienzielbyUUID(String ferienzielUUID) {
+        Ferienziel ferienziel = null;
+        for (Ferienziel entry : getFerienzielList()) {
+            if (entry.getFerienzielUUID().equals(ferienzielUUID)) {
+                ferienziel = entry;
+            }
+        }
+        return ferienziel;
+    }
     /**
      * inserts a new publisher into the reiseList
      *
@@ -135,6 +160,26 @@ public class DataHandler {
             return false;
         }
     }
+    /**
+     * reads all strecken
+     * @return list of strecken
+     */
+    public static List<Strecke> readallStrecke() {
+        return getStreckeList();
+    }
+
+    /**
+     * reads the strecke from the JSON-file
+     */
+    public static Strecke readStreckebyUUID(String streckeUUID) {
+        Strecke strecke = null;
+        for (Strecke entry : getStreckeList()) {
+            if (entry.getStreckeUUID().equals(streckeUUID)) {
+                strecke = entry;
+            }
+        }
+        return strecke;
+    }
     public static void insertStrecke(Strecke strecke) {
         getStreckeList().add(strecke);
         writeStreckeJSON();
@@ -148,42 +193,18 @@ public class DataHandler {
 
     /**
      * deletes a publisher identified by the ferienzielUUID
-     * @param ferienzielUUID  the key
+     * @param streckeUUID  the key
      * @return  success=true/false
      */
     public static boolean deleteStrecke(String streckeUUID) {
         Strecke strecke = readStreckebyUUID(streckeUUID);
         if (strecke != null) {
-            getFerienzielList().remove(strecke);
+            getStreckeList().remove(strecke);
             writeStreckeJSON();
             return true;
         } else {
             return false;
         }
-    }
-
-    /**
-     * reads all ferienziele
-     * @return list of ferienziele
-     */
-    public List<Ferienziel> readAllFerienziel() {
-
-        return getFerienzielList();
-    }
-
-    /**
-     * reads a ferienziele by its uuid
-     * @param ferienzielUUID
-     * @return the ferienziel (null=not found)
-     */
-    public static Ferienziel readFerienzielbyUUID(String ferienzielUUID) {
-        Ferienziel ferienziel = null;
-        for (Ferienziel entry : getFerienzielList()) {
-            if (entry.getFerienzielUUID().equals(ferienzielUUID)) {
-                ferienziel = entry;
-            }
-        }
-        return ferienziel;
     }
 
     /**
@@ -279,26 +300,7 @@ public class DataHandler {
         }
     }
 
-    /**
-     * reads all strecken
-     * @return list of strecken
-     */
-    public List<Strecke> readallStrecke() {
-        return getStreckeList();
-    }
 
-    /**
-     * reads the strecke from the JSON-file
-     */
-    public static Strecke readStreckebyUUID(String streckeUUID) {
-        Strecke strecke = null;
-        for (Strecke entry : getStreckeList()) {
-            if (entry.getStreckeUUID().equals(streckeUUID)) {
-                strecke = entry;
-            }
-        }
-        return strecke;
-    }
 
     /**
      * reads the strecke from the JSON-file

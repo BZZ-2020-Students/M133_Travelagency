@@ -1,6 +1,7 @@
 package ch.bzz.reisebuero.service;
 
 import ch.bzz.reisebuero.data.DataHandler;
+import ch.bzz.reisebuero.model.Ferienziel;
 import ch.bzz.reisebuero.model.Reise;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -8,7 +9,10 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
+
 @Path("reise")
 public class Reiseservice {
 
@@ -16,7 +20,7 @@ public class Reiseservice {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listReise(){
-        List<Reise> reiseList = DataHandler.getInstance().readallReise();
+        List<Reise> reiseList = DataHandler.readallReise();
         try {
             return Response
                     .status(200)
@@ -36,7 +40,7 @@ public class Reiseservice {
     public Response readReise(
             @PathParam("uuid") String reiseUUID
     ){
-        Reise reise = DataHandler.getInstance().readReisebyUUID(reiseUUID);
+        Reise reise = DataHandler.readReisebyUUID(reiseUUID);
         if (reise == null) {
             return Response
                     .status(404)
@@ -58,6 +62,32 @@ public class Reiseservice {
         if(!DataHandler.deleteReise(reiseUUID)){
             httpStatus = 410;
         }
+        return Response
+                .status(httpStatus)
+                .entity("")
+                .build();
+    }
+    @Path("create")
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response insertReise(
+    @FormParam("ferienzielUUID") String ferienzielUUID,
+    @FormParam("datum") Date datum,
+    @FormParam("preis")  Float preis,
+    @FormParam("anzPers") Integer anzPers,
+    @FormParam("bewertung") Integer bewertung
+    ){
+        Reise reise = new Reise();
+        reise.setReiseUUID(String.valueOf(UUID.randomUUID()));
+        reise.setFerienzielUUID(ferienzielUUID);
+        reise.setDatum(datum);
+        reise.setPreis(preis);
+        reise.setAnzpers(anzPers);
+        reise.setBewertung(bewertung);
+        DataHandler.insertReise(reise);
+
+
+        int httpStatus = 200;
         return Response
                 .status(httpStatus)
                 .entity("")

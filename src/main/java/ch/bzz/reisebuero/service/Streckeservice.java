@@ -17,7 +17,7 @@ public class Streckeservice {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listStrecke(){
-        List<Strecke> streckeList = DataHandler.getInstance().readallStrecke();
+        List<Strecke> streckeList = DataHandler.readallStrecke();
         try {
             return Response
                     .status(200)
