@@ -111,7 +111,7 @@ public class DataHandler {
      * reads all ferienziele
      * @return list of ferienziele
      */
-    public List<Ferienziel> readAllFerienziel() {
+    public static List<Ferienziel> readAllFerienziel() {
 
         return getFerienzielList();
     }

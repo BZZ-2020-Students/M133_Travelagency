@@ -49,4 +49,19 @@ public class Streckeservice {
                 .entity(strecke)
                 .build();
     }
+    @DELETE
+    @Path("delete/{uuid}")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response deleteStrecke(
+            @PathParam("uuid") String streckeUUID
+    ){
+        int httpStatus = 200;
+        if(!DataHandler.deleteStrecke(streckeUUID)){
+            httpStatus = 410;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("")
+                .build();
+    }
 }

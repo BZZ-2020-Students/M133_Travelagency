@@ -1,14 +1,6 @@
-[
-  {
-    "ferienzielUUID": "53d0cd98-5c43-4eb2-8366-b670e99f006f",
-    "ort": "meier",
-    "strasse": "bachweg",
-    "land": "phillip"
-  },
-  {
-    "ferienzielUUID": "98a24077-51c5-40bd-a810-90516e8e3eb3",
-    "ort": "mueller",
-    "strasse": "strasse",
-    "land": "marc"
-  }
-]
+[ {
+  "ferienzielUUID" : "d58f1f1f-c9fb-404a-a4f0-b3e541487e67",
+  "ort" : "mueller",
+  "strasse" : "strasse",
+  "land" : "marc"
+} ]

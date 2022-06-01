@@ -16,7 +16,7 @@ public class Ferienzielservice {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
     public Response listFerienziel(){
-        List<Ferienziel> ferienzielList = DataHandler.getInstance().readAllFerienziel();
+        List<Ferienziel> ferienzielList = DataHandler.readAllFerienziel();
         try {
             return Response
                     .status(200)
@@ -47,6 +47,21 @@ public class Ferienzielservice {
         return Response
                 .status(200)
                 .entity(ferienziel)
+                .build();
+    }
+    @DELETE
+    @Path("delete/{uuid}")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response deleteFerienziel(
+            @PathParam("uuid") String ferienzielUUID
+    ){
+        int httpStatus = 200;
+        if(!DataHandler.deleteFerienziel(ferienzielUUID)){
+            httpStatus = 410;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("Wurde gelöst")
                 .build();
     }
 }

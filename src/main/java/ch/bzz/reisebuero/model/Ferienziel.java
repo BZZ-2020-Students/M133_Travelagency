@@ -1,5 +1,6 @@
 package ch.bzz.reisebuero.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 /**

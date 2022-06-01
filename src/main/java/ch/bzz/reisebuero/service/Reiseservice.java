@@ -64,7 +64,7 @@ public class Reiseservice {
         }
         return Response
                 .status(httpStatus)
-                .entity("")
+                .entity("wurde gelöscht")
                 .build();
     }
     @Path("create")
