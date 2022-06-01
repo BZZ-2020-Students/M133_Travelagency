@@ -90,7 +90,7 @@ public class Reiseservice {
         int httpStatus = 200;
         return Response
                 .status(httpStatus)
-                .entity("")
+                .entity("wurde erschaffen")
                 .build();
     }
 }

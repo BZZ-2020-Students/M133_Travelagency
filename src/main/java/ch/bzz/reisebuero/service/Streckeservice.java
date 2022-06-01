@@ -2,6 +2,7 @@ package ch.bzz.reisebuero.service;
 
 import ch.bzz.reisebuero.data.DataHandler;
 import ch.bzz.reisebuero.model.Ferienziel;
+import ch.bzz.reisebuero.model.Reise;
 import ch.bzz.reisebuero.model.Strecke;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,7 +10,10 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import java.util.Date;
 import java.util.List;
+import java.util.UUID;
+
 @Path("strecke")
 public class Streckeservice {
 
@@ -62,6 +66,26 @@ public class Streckeservice {
         return Response
                 .status(httpStatus)
                 .entity("")
+                .build();
+    }
+    @Path("create")
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response insertReise(
+            @FormParam("reiseUUID") String reiseUUID,
+            @FormParam("distanz") Float distanz
+    ){
+        Strecke strecke = new Strecke();
+        strecke.setStreckeUUID(String.valueOf(UUID.randomUUID()));
+        strecke.setDistanz(distanz);
+        strecke.setReiseUUID(reiseUUID);
+        DataHandler.insertStrecke(strecke);
+
+
+        int httpStatus = 200;
+        return Response
+                .status(httpStatus)
+                .entity("wurde erschaffen")
                 .build();
     }
 }

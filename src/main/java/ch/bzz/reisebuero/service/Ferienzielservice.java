@@ -9,6 +9,8 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.util.List;
+import java.util.UUID;
+
 @Path("ferienziel")
 public class Ferienzielservice {
 
@@ -62,6 +64,28 @@ public class Ferienzielservice {
         return Response
                 .status(httpStatus)
                 .entity("Wurde gelöst")
+                .build();
+    }
+    @Path("create")
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response insertReise(
+            @FormParam("ort") String ort,
+            @FormParam("strasse") String strasse,
+            @FormParam("land")  String land
+    ){
+        Ferienziel ferienziel = new Ferienziel();
+        ferienziel.setFerienzielUUID(String.valueOf(UUID.randomUUID()));
+        ferienziel.setOrt(ort);
+        ferienziel.setStrasse(strasse);
+        ferienziel.setLand(land);
+        DataHandler.insertFerienziel(ferienziel);
+
+
+        int httpStatus = 200;
+        return Response
+                .status(httpStatus)
+                .entity("wurde erschaffen")
                 .build();
     }
 }
