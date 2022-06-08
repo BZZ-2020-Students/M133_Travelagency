@@ -21,8 +21,8 @@ public class CreateJSON {
                 new Ferienziel(UUID.randomUUID().toString(), "mueller", "strasse","marc")
         };
         Reise[] reise = {
-                new Reise (ferienziel[0],UUID.randomUUID().toString(), new Date(), 0.5f, 6, 5),
-                new Reise(ferienziel[1], UUID.randomUUID().toString(), new Date(), 4.5f, 21, 3),
+                new Reise (ferienziel[0],UUID.randomUUID().toString(), "11/12-2022", 0.5f, 6, 5),
+                new Reise(ferienziel[1], UUID.randomUUID().toString(), "11-22-2123", 4.5f, 21, 3),
         };
 
 

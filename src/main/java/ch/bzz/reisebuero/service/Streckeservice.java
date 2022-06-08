@@ -1,16 +1,14 @@
 package ch.bzz.reisebuero.service;
 
 import ch.bzz.reisebuero.data.DataHandler;
-import ch.bzz.reisebuero.model.Ferienziel;
-import ch.bzz.reisebuero.model.Reise;
 import ch.bzz.reisebuero.model.Strecke;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.validation.constraints.*;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -75,6 +73,9 @@ public class Streckeservice {
             @FormParam("reiseUUID") String reiseUUID,
             @FormParam("distanz") Float distanz
     ){
+
+        int httpStatus = 200;
+        
         Strecke strecke = new Strecke();
         strecke.setStreckeUUID(String.valueOf(UUID.randomUUID()));
         strecke.setDistanz(distanz);
@@ -82,10 +83,53 @@ public class Streckeservice {
         DataHandler.insertStrecke(strecke);
 
 
-        int httpStatus = 200;
+
         return Response
                 .status(httpStatus)
                 .entity("wurde erschaffen")
                 .build();
+    }
+    @PUT
+    @Path("update")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response updateReise(
+
+            @FormParam("UUID")
+            @NotEmpty
+            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+                    String streckeUUID,
+
+            @FormParam("distanz")
+            @NotEmpty
+            @Min(value = 1)
+            @Max(value = 5)
+                    //@Range(min=1,max=5)
+                    Float distanz,
+
+            @FormParam("UUID")
+            @NotEmpty
+            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+                    String reiseUUID
+
+
+
+
+
+    ) {
+        int httpStatus = 200;
+        Strecke strecke = DataHandler.readStreckebyUUID(streckeUUID);
+        if (strecke != null) {
+            strecke.setStreckeUUID(streckeUUID);
+            strecke.setDistanz(distanz);
+            strecke.setReiseUUID(reiseUUID);
+            DataHandler.updateStrecke();
+        } else {
+            httpStatus = 410;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("wurde geupdated")
+                .build();
+
     }
 }

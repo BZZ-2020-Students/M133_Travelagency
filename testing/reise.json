@@ -1,18 +1,18 @@
 [
   {
-    "reiseUUID": "f388ad35-eff8-45ad-8aae-d239005ed326",
-    "datum": 1654091161239,
+    "reiseUUID": "cf9293d5-2493-4516-a112-047d0ce30193",
+    "datum": "11/12-2022",
     "preis": 0.5,
     "anzpers": 6,
     "bewertung": 5,
-    "ferienzielUUID": "d2efec16-4c10-4c6a-87cb-a28b9065c86c"
+    "ferienzielUUID": "d6826c54-0e40-490a-8dcd-6f4787eeb394"
   },
   {
-    "reiseUUID": "66f1a9b9-0343-4552-a573-b89ee4729de2",
-    "datum": 1654091161239,
+    "reiseUUID": "b6827911-4f42-4585-9653-90115ee5f745",
+    "datum": "11-22-2123",
     "preis": 4.5,
     "anzpers": 21,
     "bewertung": 3,
-    "ferienzielUUID": "ad036a77-9e40-43c5-83d1-9e5f3cb09cc4"
+    "ferienzielUUID": "560efb5f-e350-482a-8e39-c8da929e07bb"
   }
 ]

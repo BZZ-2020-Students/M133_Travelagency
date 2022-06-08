@@ -6,8 +6,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Date;
-
 
 
 /**
@@ -16,19 +14,19 @@ import java.util.Date;
 @Setter
 @Getter
 public class Reise {
-    @JsonIgnore
-    private Ferienziel ferienziel;
     private String reiseUUID;
-    private Date datum;
+    private String datum;
     private Float preis;
     private Integer anzpers;
     private Integer bewertung;
+    @JsonIgnore
+    private Ferienziel ferienziel;
 
     /**
     *constructor
     * */
 
-    public Reise(Ferienziel ferienziel, String reiseUUID, Date datum, Float preis, Integer anzpers, Integer bewertung) {
+    public Reise(Ferienziel ferienziel, String reiseUUID, String datum, Float preis, Integer anzpers, Integer bewertung) {
         this.ferienziel = ferienziel;
         this.reiseUUID = reiseUUID;
         this.datum = datum;
@@ -65,6 +63,51 @@ public class Reise {
         getFerienziel().setOrt(ferienziel.getOrt());
     }
 
+    public String getReiseUUID() {
+        return reiseUUID;
+    }
 
+    public void setReiseUUID(String reiseUUID) {
+        this.reiseUUID = reiseUUID;
+    }
 
+    public String getDatum() {
+        return datum;
+    }
+
+    public void setDatum(String datum) {
+        this.datum = datum;
+    }
+
+    public Float getPreis() {
+        return preis;
+    }
+
+    public void setPreis(Float preis) {
+        this.preis = preis;
+    }
+
+    public Integer getAnzpers() {
+        return anzpers;
+    }
+
+    public void setAnzpers(Integer anzpers) {
+        this.anzpers = anzpers;
+    }
+
+    public Integer getBewertung() {
+        return bewertung;
+    }
+
+    public void setBewertung(Integer bewertung) {
+        this.bewertung = bewertung;
+    }
+
+    public Ferienziel getFerienziel() {
+        return ferienziel;
+    }
+
+    public void setFerienziel(Ferienziel ferienziel) {
+        this.ferienziel = ferienziel;
+    }
 }

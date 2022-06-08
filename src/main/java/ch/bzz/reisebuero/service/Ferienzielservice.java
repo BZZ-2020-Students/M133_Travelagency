@@ -4,6 +4,7 @@ import ch.bzz.reisebuero.data.DataHandler;
 import ch.bzz.reisebuero.model.Ferienziel;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.validation.constraints.*;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -38,7 +39,6 @@ public class Ferienzielservice {
     public Response readFerienziel(
             @PathParam("uuid") String ferienzielUUID
     ){
-        int httpStatus = 200;
         Ferienziel ferienziel = DataHandler.readFerienzielbyUUID(ferienzielUUID);
         if(ferienziel== null){
             return Response
@@ -70,9 +70,20 @@ public class Ferienzielservice {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertReise(
-            @FormParam("ort") String ort,
-            @FormParam("strasse") String strasse,
-            @FormParam("land")  String land
+            @FormParam("ort")
+            @NotEmpty
+            @Size(min=2, max=40)
+                    String ort,
+
+            @FormParam("strasse")
+            @NotEmpty
+            @Size(min=2, max=40)
+                    String strasse,
+
+            @FormParam("land")
+            @NotEmpty
+            @Size(min=2, max=40)
+                    String land
     ){
         Ferienziel ferienziel = new Ferienziel();
         ferienziel.setFerienzielUUID(String.valueOf(UUID.randomUUID()));
@@ -88,4 +99,51 @@ public class Ferienzielservice {
                 .entity("wurde erschaffen")
                 .build();
     }
+    @PUT
+    @Path("update")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response updateReise(
+            @FormParam("ferienzielUUID")
+            @NotEmpty
+            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+                    String ferienzielUUID,
+
+            @FormParam("ort")
+            @NotEmpty
+            @Size(min=2, max=40)
+                    String ort,
+
+            @FormParam("strasse")
+            @NotEmpty
+            @Size(min=2, max=40)
+                    String strasse,
+
+            @FormParam("land")
+            @NotEmpty
+            @Size(min=2, max=40)
+                    String land
+
+
+
+
+    ) {
+        int httpStatus = 200;
+        Ferienziel ferienziel = DataHandler.readFerienzielbyUUID(ferienzielUUID);
+        if (ferienziel != null) {
+            ferienziel.setFerienzielUUID(ferienzielUUID);
+            ferienziel.setOrt(ort);
+            ferienziel.setStrasse(strasse);
+            ferienziel.setLand(land);
+            DataHandler.updateFerienziel();
+        } else {
+            httpStatus = 410;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("wurde geupdated")
+                .build();
+
+    }
+
+
 }

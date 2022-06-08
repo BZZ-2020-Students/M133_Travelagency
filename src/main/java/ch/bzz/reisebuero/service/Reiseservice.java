@@ -1,15 +1,14 @@
 package ch.bzz.reisebuero.service;
 
 import ch.bzz.reisebuero.data.DataHandler;
-import ch.bzz.reisebuero.model.Ferienziel;
 import ch.bzz.reisebuero.model.Reise;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.validation.constraints.*;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -71,11 +70,34 @@ public class Reiseservice {
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertReise(
-    @FormParam("ferienzielUUID") String ferienzielUUID,
-    @FormParam("datum") Date datum,
-    @FormParam("preis")  Float preis,
-    @FormParam("anzPers") Integer anzPers,
-    @FormParam("bewertung") Integer bewertung
+            @FormParam("ferienzielUUID")
+            @NotEmpty
+            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+                    String ferienzielUUID,
+
+            @FormParam("datum")
+            @NotEmpty
+            @Pattern(regexp = "")
+                    String datum,
+
+            @FormParam("preis")
+            @NotEmpty
+            @DecimalMax(value="99999.95")
+            @DecimalMin(value="0.05")
+                    Float preis,
+
+            @FormParam("anzPers")
+            @NotEmpty
+            @Min(value = 1)
+            @Max(value = 9)
+                    Integer anzPers,
+
+            @FormParam("bewertung")
+            @NotEmpty
+            @Min(value = 1)
+            @Max(value = 5)
+                    //@Range(min=1,max=5)
+                    Integer bewertung
     ){
         Reise reise = new Reise();
         reise.setReiseUUID(String.valueOf(UUID.randomUUID()));
@@ -92,5 +114,64 @@ public class Reiseservice {
                 .status(httpStatus)
                 .entity("wurde erschaffen")
                 .build();
+    }
+    @PUT
+    @Path("update")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response updateReise(
+            @FormParam("UUID")
+            @NotEmpty
+            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+                    String reiseUUID,
+
+            @FormParam("ferienzielUUID")
+            @NotEmpty
+            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+                    String ferienzielUUID,
+
+            @FormParam("datum")
+            @NotEmpty
+            @Pattern(regexp = "")
+                    String datum,
+
+            @FormParam("preis")
+            @NotEmpty
+            @DecimalMax(value="99999.95")
+            @DecimalMin(value="0.05")
+                    Float preis,
+
+            @FormParam("anzPers")
+            @NotEmpty
+            @Min(value = 1)
+            @Max(value = 9)
+                    Integer anzPers,
+
+            @FormParam("bewertung")
+            @NotEmpty
+            @Min(value = 1)
+            @Max(value = 5)
+            //@Range(min=1,max=5)
+                    Integer bewertung
+
+
+    ) {
+        int httpStatus = 200;
+        Reise reise = DataHandler.readReisebyUUID(reiseUUID);
+        if (reise != null) {
+            reise.setReiseUUID(reiseUUID);
+            reise.setFerienzielUUID(ferienzielUUID);
+            reise.setDatum(datum);
+            reise.setPreis(preis);
+            reise.setAnzpers(anzPers);
+            reise.setBewertung(bewertung);
+            DataHandler.updateReise();
+        } else {
+            httpStatus = 410;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("wurde geupdated")
+                .build();
+
     }
 }

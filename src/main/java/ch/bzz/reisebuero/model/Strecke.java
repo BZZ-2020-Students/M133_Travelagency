@@ -5,8 +5,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
-@Setter
 @Getter
+@Setter
+
 public class Strecke {
     private String streckeUUID;
     private Float distanz;
@@ -40,8 +41,32 @@ public class Strecke {
      */
     public void setReiseUUID(String reiseUUID) {
         setReise( new Reise());
-        Reise reise = DataHandler.getInstance().readReisebyUUID(reiseUUID);
+        Reise reise = DataHandler.readReisebyUUID(reiseUUID);
         getReise().setReiseUUID(reiseUUID);
         setReise(reise);
+    }
+
+    public String getStreckeUUID() {
+        return streckeUUID;
+    }
+
+    public void setStreckeUUID(String streckeUUID) {
+        this.streckeUUID = streckeUUID;
+    }
+
+    public Float getDistanz() {
+        return distanz;
+    }
+
+    public void setDistanz(Float distanz) {
+        this.distanz = distanz;
+    }
+
+    public ch.bzz.reisebuero.model.Reise getReise() {
+        return reise;
+    }
+
+    public void setReise(ch.bzz.reisebuero.model.Reise reise) {
+        this.reise = reise;
     }
 }
