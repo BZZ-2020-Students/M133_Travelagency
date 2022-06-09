@@ -1,7 +1,6 @@
 package ch.bzz.reisebuero.data;
 
 
-
 import ch.bzz.reisebuero.model.Ferienziel;
 import ch.bzz.reisebuero.model.Reise;
 import ch.bzz.reisebuero.model.Strecke;
@@ -41,6 +40,7 @@ public class DataHandler {
 
     /**
      * gets the only instance of this class
+     *
      * @return
      */
     public static DataHandler getInstance() {
@@ -52,6 +52,7 @@ public class DataHandler {
 
     /**
      * reads all reise
+     *
      * @return list of books
      */
     public static List<Reise> readallReise() {
@@ -60,6 +61,7 @@ public class DataHandler {
 
     /**
      * reads a reise by its uuid
+     *
      * @return the reise (null=not found)
      */
     public static Reise readReisebyUUID(String reiseUUID) {
@@ -91,8 +93,9 @@ public class DataHandler {
 
     /**
      * deletes a book identified by the reiseUUID
-     * @param reiseUUID  the key
-     * @return  success=true/false
+     *
+     * @param reiseUUID the key
+     * @return success=true/false
      */
     public static boolean deleteReise(String reiseUUID) {
         Reise reise = readReisebyUUID(reiseUUID);
@@ -106,9 +109,9 @@ public class DataHandler {
     }
 
 
-
     /**
      * reads all ferienziele
+     *
      * @return list of ferienziele
      */
     public static List<Ferienziel> readAllFerienziel() {
@@ -118,6 +121,7 @@ public class DataHandler {
 
     /**
      * reads a ferienziele by its uuid
+     *
      * @return the ferienziel (null=not found)
      */
     public static Ferienziel readFerienzielbyUUID(String ferienzielUUID) {
@@ -129,6 +133,7 @@ public class DataHandler {
         }
         return ferienziel;
     }
+
     /**
      * inserts a new publisher into the reiseList
      *
@@ -138,6 +143,7 @@ public class DataHandler {
         getFerienzielList().add(ferienziel);
         writeFerienzielJSON();
     }
+
     /**
      * updates the ferienzielList
      */
@@ -147,8 +153,9 @@ public class DataHandler {
 
     /**
      * deletes a publisher identified by the ferienzielUUID
-     * @param ferienzielUUID  the key
-     * @return  success=true/false
+     *
+     * @param ferienzielUUID the key
+     * @return success=true/false
      */
     public static boolean deleteFerienziel(String ferienzielUUID) {
         Ferienziel ferienziel = readFerienzielbyUUID(ferienzielUUID);
@@ -160,8 +167,10 @@ public class DataHandler {
             return false;
         }
     }
+
     /**
      * reads all strecken
+     *
      * @return list of strecken
      */
     public static List<Strecke> readallStrecke() {
@@ -180,10 +189,12 @@ public class DataHandler {
         }
         return strecke;
     }
+
     public static void insertStrecke(Strecke strecke) {
         getStreckeList().add(strecke);
         writeStreckeJSON();
     }
+
     /**
      * updates the StreckeList
      */
@@ -193,8 +204,9 @@ public class DataHandler {
 
     /**
      * deletes a publisher identified by the ferienzielUUID
-     * @param streckeUUID  the key
-     * @return  success=true/false
+     *
+     * @param streckeUUID the key
+     * @return success=true/false
      */
     public static boolean deleteStrecke(String streckeUUID) {
         Strecke strecke = readStreckebyUUID(streckeUUID);
@@ -225,6 +237,7 @@ public class DataHandler {
             ex.printStackTrace();
         }
     }
+
     /**
      * writes the bookList to the JSON-file
      */
@@ -301,7 +314,6 @@ public class DataHandler {
     }
 
 
-
     /**
      * reads the strecke from the JSON-file
      */
@@ -320,11 +332,12 @@ public class DataHandler {
             ex.printStackTrace();
         }
     }
-           /**
-         * gets reiselist
-         *
-         * @return value of bookList
-         */
+
+    /**
+     * gets reiselist
+     *
+     * @return value of bookList
+     */
     private static List<Reise> getReiseList() {
         if (reiseList == null) {
             setReiseList(new ArrayList<>());
@@ -365,6 +378,7 @@ public class DataHandler {
     private static void setFerienzielList(List<Ferienziel> ferienzielList) {
         DataHandler.ferienzielList = ferienzielList;
     }
+
     /**
      * gets streckenlist
      *

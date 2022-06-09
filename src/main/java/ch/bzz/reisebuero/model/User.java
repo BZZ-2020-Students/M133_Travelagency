@@ -6,11 +6,11 @@ public class User {
     private String password;
     private String userRole;
 
-    public void logon(){
+    public void logon() {
 
     }
 
-    public void logoff(){
+    public void logoff() {
 
     }
 

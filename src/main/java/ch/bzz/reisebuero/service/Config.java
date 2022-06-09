@@ -20,6 +20,7 @@ import java.util.Set;
 public class Config extends Application {
     private static final String PROPERTIES_PATH = "C:\\Github\\M133_Reisebuero\\testing\\reiseList.properties";
     private static Properties properties = null;
+
     /**
      * define all provider classes
      *
@@ -44,6 +45,7 @@ public class Config extends Application {
         if (value == null) return "";
         return value;
     }
+
     private static void readProperties() {
 
         InputStream inputStream;

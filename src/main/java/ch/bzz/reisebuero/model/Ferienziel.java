@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 /**
- *a ferienziel in reisebüro
- * */
+ * a ferienziel in reisebüro
+ */
 
 @Builder
 public class Ferienziel {

@@ -18,7 +18,7 @@ public class Reiseservice {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listReise(){
+    public Response listReise() {
         List<Reise> reiseList = DataHandler.readallReise();
         try {
             return Response
@@ -38,7 +38,7 @@ public class Reiseservice {
     @Produces(MediaType.APPLICATION_JSON)
     public Response readReise(
             @PathParam("uuid") String reiseUUID
-    ){
+    ) {
         Reise reise = DataHandler.readReisebyUUID(reiseUUID);
         if (reise == null) {
             return Response
@@ -51,14 +51,15 @@ public class Reiseservice {
                 .entity(reise)
                 .build();
     }
+
     @DELETE
     @Path("delete/{uuid}")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteReise(
             @PathParam("uuid") String reiseUUID
-    ){
+    ) {
         int httpStatus = 200;
-        if(!DataHandler.deleteReise(reiseUUID)){
+        if (!DataHandler.deleteReise(reiseUUID)) {
             httpStatus = 410;
         }
         return Response
@@ -66,6 +67,7 @@ public class Reiseservice {
                 .entity("wurde gelöscht")
                 .build();
     }
+
     @Path("create")
     @POST
     @Produces(MediaType.TEXT_PLAIN)
@@ -77,13 +79,16 @@ public class Reiseservice {
 
             @FormParam("datum")
             @NotEmpty
-            @Pattern(regexp = "")
+            @Pattern(regexp = "^((2000|2400|2800|(19|2[0-9])(0[48]|[2468][048]|[13579][26]))-02-29)$"
+                    + "|^(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))$"
+                    + "|^(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))$"
+                    + "|^(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))$")
                     String datum,
 
             @FormParam("preis")
             @NotEmpty
-            @DecimalMax(value="99999.95")
-            @DecimalMin(value="0.05")
+            @DecimalMax(value = "99999.95")
+            @DecimalMin(value = "0.05")
                     Float preis,
 
             @FormParam("anzPers")
@@ -98,7 +103,7 @@ public class Reiseservice {
             @Max(value = 5)
                     //@Range(min=1,max=5)
                     Integer bewertung
-    ){
+    ) {
         Reise reise = new Reise();
         reise.setReiseUUID(String.valueOf(UUID.randomUUID()));
         reise.setFerienzielUUID(ferienzielUUID);
@@ -115,6 +120,7 @@ public class Reiseservice {
                 .entity("wurde erschaffen")
                 .build();
     }
+
     @PUT
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
@@ -131,13 +137,16 @@ public class Reiseservice {
 
             @FormParam("datum")
             @NotEmpty
-            @Pattern(regexp = "")
+            @Pattern(regexp = "^((2000|2400|2800|(19|2[0-9])(0[48]|[2468][048]|[13579][26]))-02-29)$"
+                    + "|^(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))$"
+                    + "|^(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))$"
+                    + "|^(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))$")
                     String datum,
 
             @FormParam("preis")
             @NotEmpty
-            @DecimalMax(value="99999.95")
-            @DecimalMin(value="0.05")
+            @DecimalMax(value = "99999.95")
+            @DecimalMin(value = "0.05")
                     Float preis,
 
             @FormParam("anzPers")
@@ -150,7 +159,7 @@ public class Reiseservice {
             @NotEmpty
             @Min(value = 1)
             @Max(value = 5)
-            //@Range(min=1,max=5)
+                    //@Range(min=1,max=5)
                     Integer bewertung
 
 

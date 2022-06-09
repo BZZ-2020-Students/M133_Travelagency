@@ -7,10 +7,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 
-
 /**
- *a reise in reisebüro
- * */
+ * a reise in reisebüro
+ */
 @Setter
 @Getter
 public class Reise {
@@ -23,8 +22,8 @@ public class Reise {
     private Ferienziel ferienziel;
 
     /**
-    *constructor
-    * */
+     * constructor
+     */
 
     public Reise(Ferienziel ferienziel, String reiseUUID, String datum, Float preis, Integer anzpers, Integer bewertung) {
         this.ferienziel = ferienziel;
@@ -34,24 +33,28 @@ public class Reise {
         this.anzpers = anzpers;
         this.bewertung = bewertung;
     }
+
     /**
      * empty constructor
-     * */
-    public Reise(){
+     */
+    public Reise() {
 
     }
+
     /**
      * gets ferienzielUUID
+     *
      * @return value of ferienziel
      */
 
     public String getFerienzielUUID() {
-        if (getFerienziel()== null) return null;
+        if (getFerienziel() == null) return null;
         return getFerienziel().getFerienzielUUID();
     }
 
     /**
      * creates a ferienziel-object without the reiseList
+     *
      * @param ferienzielUUID
      */
     public void setFerienzielUUID(String ferienzielUUID) {

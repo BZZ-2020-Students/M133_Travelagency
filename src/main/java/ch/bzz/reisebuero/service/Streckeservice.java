@@ -18,7 +18,7 @@ public class Streckeservice {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listStrecke(){
+    public Response listStrecke() {
         List<Strecke> streckeList = DataHandler.readallStrecke();
         try {
             return Response
@@ -38,9 +38,9 @@ public class Streckeservice {
     @Produces(MediaType.APPLICATION_JSON)
     public Response readReise(
             @PathParam("uuid") String streckeUUID
-    ){
+    ) {
         Strecke strecke = DataHandler.readStreckebyUUID(streckeUUID);
-        if(strecke== null){
+        if (strecke == null) {
             return Response
                     .status(404)
                     .entity("Strecke nicht gefunden")
@@ -51,14 +51,15 @@ public class Streckeservice {
                 .entity(strecke)
                 .build();
     }
+
     @DELETE
     @Path("delete/{uuid}")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteStrecke(
             @PathParam("uuid") String streckeUUID
-    ){
+    ) {
         int httpStatus = 200;
-        if(!DataHandler.deleteStrecke(streckeUUID)){
+        if (!DataHandler.deleteStrecke(streckeUUID)) {
             httpStatus = 410;
         }
         return Response
@@ -66,16 +67,26 @@ public class Streckeservice {
                 .entity("")
                 .build();
     }
+
     @Path("create")
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertReise(
-            @FormParam("reiseUUID") String reiseUUID,
-            @FormParam("distanz") Float distanz
-    ){
+            @FormParam("distanz")
+            @NotEmpty
+            @Min(value = 1)
+            @Max(value = 5)
+                    //@Range(min=1,max=5)
+                    Float distanz,
+
+            @FormParam("UUID")
+            @NotEmpty
+            @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
+                    String reiseUUID
+    ) {
 
         int httpStatus = 200;
-        
+
         Strecke strecke = new Strecke();
         strecke.setStreckeUUID(String.valueOf(UUID.randomUUID()));
         strecke.setDistanz(distanz);
@@ -83,12 +94,12 @@ public class Streckeservice {
         DataHandler.insertStrecke(strecke);
 
 
-
         return Response
                 .status(httpStatus)
                 .entity("wurde erschaffen")
                 .build();
     }
+
     @PUT
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
@@ -110,11 +121,6 @@ public class Streckeservice {
             @NotEmpty
             @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
                     String reiseUUID
-
-
-
-
-
     ) {
         int httpStatus = 200;
         Strecke strecke = DataHandler.readStreckebyUUID(streckeUUID);

@@ -18,7 +18,7 @@ public class Ferienzielservice {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listFerienziel(){
+    public Response listFerienziel() {
         List<Ferienziel> ferienzielList = DataHandler.readAllFerienziel();
         try {
             return Response
@@ -38,9 +38,9 @@ public class Ferienzielservice {
     @Produces(MediaType.APPLICATION_JSON)
     public Response readFerienziel(
             @PathParam("uuid") String ferienzielUUID
-    ){
+    ) {
         Ferienziel ferienziel = DataHandler.readFerienzielbyUUID(ferienzielUUID);
-        if(ferienziel== null){
+        if (ferienziel == null) {
             return Response
                     .status(404)
                     .entity("ferienziel nicht gefunden")
@@ -51,14 +51,15 @@ public class Ferienzielservice {
                 .entity(ferienziel)
                 .build();
     }
+
     @DELETE
     @Path("delete/{uuid}")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteFerienziel(
             @PathParam("uuid") String ferienzielUUID
-    ){
+    ) {
         int httpStatus = 200;
-        if(!DataHandler.deleteFerienziel(ferienzielUUID)){
+        if (!DataHandler.deleteFerienziel(ferienzielUUID)) {
             httpStatus = 410;
         }
         return Response
@@ -66,25 +67,26 @@ public class Ferienzielservice {
                 .entity("Wurde gelöst")
                 .build();
     }
+
     @Path("create")
     @POST
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertReise(
             @FormParam("ort")
             @NotEmpty
-            @Size(min=2, max=40)
+            @Size(min = 2, max = 40)
                     String ort,
 
             @FormParam("strasse")
             @NotEmpty
-            @Size(min=2, max=40)
+            @Size(min = 2, max = 40)
                     String strasse,
 
             @FormParam("land")
             @NotEmpty
-            @Size(min=2, max=40)
+            @Size(min = 2, max = 40)
                     String land
-    ){
+    ) {
         Ferienziel ferienziel = new Ferienziel();
         ferienziel.setFerienzielUUID(String.valueOf(UUID.randomUUID()));
         ferienziel.setOrt(ort);
@@ -99,6 +101,7 @@ public class Ferienzielservice {
                 .entity("wurde erschaffen")
                 .build();
     }
+
     @PUT
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
@@ -110,20 +113,18 @@ public class Ferienzielservice {
 
             @FormParam("ort")
             @NotEmpty
-            @Size(min=2, max=40)
+            @Size(min = 2, max = 40)
                     String ort,
 
             @FormParam("strasse")
             @NotEmpty
-            @Size(min=2, max=40)
+            @Size(min = 2, max = 40)
                     String strasse,
 
             @FormParam("land")
             @NotEmpty
-            @Size(min=2, max=40)
+            @Size(min = 2, max = 40)
                     String land
-
-
 
 
     ) {
