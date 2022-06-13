@@ -1,9 +1,9 @@
 package ch.bzz.reisebuero.data;
 
 
-import ch.bzz.reisebuero.model.Ferienziel;
-import ch.bzz.reisebuero.model.Reise;
-import ch.bzz.reisebuero.model.Strecke;
+import ch.bzz.reisebuero.model.Destination;
+import ch.bzz.reisebuero.model.Journey;
+import ch.bzz.reisebuero.model.Route;
 
 import ch.bzz.reisebuero.service.Config;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
@@ -22,20 +22,20 @@ import java.util.List;
  */
 public class DataHandler {
     private static DataHandler instance = null;
-    private static List<Reise> reiseList;
-    private static List<Ferienziel> ferienzielList;
-    private static List<Strecke> streckeList;
+    private static List<Journey> journeyList;
+    private static List<Destination> destinationList;
+    private static List<Route> routeList;
 
     /**
      * private constructor defeats instantiation
      */
     private DataHandler() {
-        setFerienzielList(new ArrayList<>());
-        readFerienzielJSON();
-        setReiseList(new ArrayList<>());
-        readReiseJSON();
-        setStreckeList(new ArrayList<>());
-        readStreckeJSON();
+        setDestinationList(new ArrayList<>());
+        readDestinationJSON();
+        setJourneyList(new ArrayList<>());
+        readJourneyJSON();
+        setRouteList(new ArrayList<>());
+        readRouteJSON();
     }
 
     /**
@@ -55,8 +55,8 @@ public class DataHandler {
      *
      * @return list of books
      */
-    public static List<Reise> readallReise() {
-        return getReiseList();
+    public static List<Journey> readallJourney() {
+        return getJourneyList();
     }
 
     /**
@@ -64,44 +64,44 @@ public class DataHandler {
      *
      * @return the reise (null=not found)
      */
-    public static Reise readReisebyUUID(String reiseUUID) {
-        Reise reise = null;
-        for (Reise entry : getReiseList()) {
-            if (entry.getReiseUUID().equals(reiseUUID)) {
-                reise = entry;
+    public static Journey readJourneyByUUID(String journeyUUID) {
+        Journey journey = null;
+        for (Journey entry : getJourneyList()) {
+            if (entry.getJourneyUUID().equals(journeyUUID)) {
+                journey = entry;
             }
         }
-        return reise;
+        return journey;
     }
 
     /**
      * inserts a new book into the reiselist
      *
-     * @param reise the reise to be saved
+     * @param journey the reise to be saved
      */
-    public static void insertReise(Reise reise) {
-        getReiseList().add(reise);
-        writeReiseJSON();
+    public static void insertJourney(Journey journey) {
+        getJourneyList().add(journey);
+        writeJourneyJSON();
     }
 
     /**
      * updates the reiseList
      */
-    public static void updateReise() {
-        writeReiseJSON();
+    public static void updateJourney() {
+        writeJourneyJSON();
     }
 
     /**
      * deletes a book identified by the reiseUUID
      *
-     * @param reiseUUID the key
+     * @param journeyUUID the key
      * @return success=true/false
      */
-    public static boolean deleteReise(String reiseUUID) {
-        Reise reise = readReisebyUUID(reiseUUID);
-        if (reise != null) {
-            getReiseList().remove(reise);
-            writeReiseJSON();
+    public static boolean deleteJourney(String journeyUUID) {
+        Journey journey = readJourneyByUUID(journeyUUID);
+        if (journey != null) {
+            getJourneyList().remove(journey);
+            writeJourneyJSON();
             return true;
         } else {
             return false;
@@ -114,9 +114,9 @@ public class DataHandler {
      *
      * @return list of ferienziele
      */
-    public static List<Ferienziel> readAllFerienziel() {
+    public static List<Destination> readAllDestination() {
 
-        return getFerienzielList();
+        return getDestinationList();
     }
 
     /**
@@ -124,44 +124,44 @@ public class DataHandler {
      *
      * @return the ferienziel (null=not found)
      */
-    public static Ferienziel readFerienzielbyUUID(String ferienzielUUID) {
-        Ferienziel ferienziel = null;
-        for (Ferienziel entry : getFerienzielList()) {
-            if (entry.getFerienzielUUID().equals(ferienzielUUID)) {
-                ferienziel = entry;
+    public static Destination readDestinationbyUUID(String destinationUUID) {
+        Destination destination = null;
+        for (Destination entry : getDestinationList()) {
+            if (entry.getDestinationUUID().equals(destinationUUID)) {
+                destination = entry;
             }
         }
-        return ferienziel;
+        return destination;
     }
 
     /**
      * inserts a new publisher into the reiseList
      *
-     * @param ferienziel the ferienziel to be saved
+     * @param destination the ferienziel to be saved
      */
-    public static void insertFerienziel(Ferienziel ferienziel) {
-        getFerienzielList().add(ferienziel);
-        writeFerienzielJSON();
+    public static void insertDestination(Destination destination) {
+        getDestinationList().add(destination);
+        writeDestinationJSON();
     }
 
     /**
      * updates the ferienzielList
      */
-    public static void updateFerienziel() {
-        writeFerienzielJSON();
+    public static void updateDestination() {
+        writeDestinationJSON();
     }
 
     /**
      * deletes a publisher identified by the ferienzielUUID
      *
-     * @param ferienzielUUID the key
+     * @param destinationUUID the key
      * @return success=true/false
      */
-    public static boolean deleteFerienziel(String ferienzielUUID) {
-        Ferienziel ferienziel = readFerienzielbyUUID(ferienzielUUID);
-        if (ferienziel != null) {
-            getFerienzielList().remove(ferienziel);
-            writeFerienzielJSON();
+    public static boolean deleteDestination(String destinationUUID) {
+        Destination destination = readDestinationbyUUID(destinationUUID);
+        if (destination != null) {
+            getDestinationList().remove(destination);
+            writeDestinationJSON();
             return true;
         } else {
             return false;
@@ -173,46 +173,46 @@ public class DataHandler {
      *
      * @return list of strecken
      */
-    public static List<Strecke> readallStrecke() {
-        return getStreckeList();
+    public static List<Route> readallRoute() {
+        return getRouteList();
     }
 
     /**
      * reads the strecke from the JSON-file
      */
-    public static Strecke readStreckebyUUID(String streckeUUID) {
-        Strecke strecke = null;
-        for (Strecke entry : getStreckeList()) {
-            if (entry.getStreckeUUID().equals(streckeUUID)) {
-                strecke = entry;
+    public static Route readRoutebyUUID(String routeUUID) {
+        Route route = null;
+        for (Route entry : getRouteList()) {
+            if (entry.getRouteUUID().equals(routeUUID)) {
+                route = entry;
             }
         }
-        return strecke;
+        return route;
     }
 
-    public static void insertStrecke(Strecke strecke) {
-        getStreckeList().add(strecke);
-        writeStreckeJSON();
+    public static void insertRoute(Route route) {
+        getRouteList().add(route);
+        writeRouteJSON();
     }
 
     /**
      * updates the StreckeList
      */
-    public static void updateStrecke() {
-        writeStreckeJSON();
+    public static void updateRoute() {
+        writeRouteJSON();
     }
 
     /**
      * deletes a publisher identified by the ferienzielUUID
      *
-     * @param streckeUUID the key
+     * @param routeUUID the key
      * @return success=true/false
      */
-    public static boolean deleteStrecke(String streckeUUID) {
-        Strecke strecke = readStreckebyUUID(streckeUUID);
-        if (strecke != null) {
-            getStreckeList().remove(strecke);
-            writeStreckeJSON();
+    public static boolean deleteRoute(String routeUUID) {
+        Route route = readRoutebyUUID(routeUUID);
+        if (route != null) {
+            getRouteList().remove(route);
+            writeRouteJSON();
             return true;
         } else {
             return false;
@@ -222,16 +222,16 @@ public class DataHandler {
     /**
      * reads the ferienziel from the JSON-file
      */
-    private static void readReiseJSON() {
+    private static void readJourneyJSON() {
         try {
-            String path = Config.getProperty("reiseJSON");
+            String path = Config.getProperty("journeyJSON");
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(path)
             );
             ObjectMapper objectMapper = new ObjectMapper();
-            Reise[] reisen = objectMapper.readValue(jsonData, Reise[].class);
-            for (Reise reise : reisen) {
-                getReiseList().add(reise);
+            Journey[] journeys = objectMapper.readValue(jsonData, Journey[].class);
+            for (Journey journey : journeys) {
+                getJourneyList().add(journey);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -241,17 +241,17 @@ public class DataHandler {
     /**
      * writes the bookList to the JSON-file
      */
-    private static void writeReiseJSON() {
+    private static void writeJourneyJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
         FileOutputStream fileOutputStream = null;
         Writer fileWriter;
 
-        String reisePath = Config.getProperty("reiseJSON");
+        String journeyPath = Config.getProperty("journeyJSON");
         try {
-            fileOutputStream = new FileOutputStream(reisePath);
+            fileOutputStream = new FileOutputStream(journeyPath);
             fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            objectWriter.writeValue(fileWriter, getReiseList());
+            objectWriter.writeValue(fileWriter, getJourneyList());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -260,17 +260,17 @@ public class DataHandler {
     /**
      * reads the ferienziel from the JSON-file
      */
-    private static void readFerienzielJSON() {
+    private static void readDestinationJSON() {
         try {
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(
-                            Config.getProperty("ferienzielJSON")
+                            Config.getProperty("destinationJSON")
                     )
             );
             ObjectMapper objectMapper = new ObjectMapper();
-            Ferienziel[] ferienziele = objectMapper.readValue(jsonData, Ferienziel[].class);
-            for (Ferienziel ferienziel : ferienziele) {
-                getFerienzielList().add(ferienziel);
+            Destination[] destinations = objectMapper.readValue(jsonData, Destination[].class);
+            for (Destination destination : destinations) {
+                getDestinationList().add(destination);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -281,33 +281,33 @@ public class DataHandler {
     /**
      * writes the publisherList to the JSON-file
      */
-    private static void writeFerienzielJSON() {
+    private static void writeDestinationJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
         FileOutputStream fileOutputStream = null;
         Writer fileWriter;
 
-        String ferienzielPath = Config.getProperty("ferienzielJSON");
+        String destinationPath = Config.getProperty("destinationJSON");
         try {
-            fileOutputStream = new FileOutputStream(ferienzielPath);
+            fileOutputStream = new FileOutputStream(destinationPath);
             fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            objectWriter.writeValue(fileWriter, getFerienzielList());
+            objectWriter.writeValue(fileWriter, getDestinationList());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
     }
 
-    private static void writeStreckeJSON() {
+    private static void writeRouteJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
         FileOutputStream fileOutputStream = null;
         Writer fileWriter;
 
-        String streckePath = Config.getProperty("streckeJSON");
+        String routePath = Config.getProperty("streckeJSON");
         try {
-            fileOutputStream = new FileOutputStream(streckePath);
+            fileOutputStream = new FileOutputStream(routePath);
             fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
-            objectWriter.writeValue(fileWriter, getStreckeList());
+            objectWriter.writeValue(fileWriter, getRouteList());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -317,16 +317,16 @@ public class DataHandler {
     /**
      * reads the strecke from the JSON-file
      */
-    private static void readStreckeJSON() {
+    private static void readRouteJSON() {
         try {
-            String path = Config.getProperty("streckeJSON");
+            String path = Config.getProperty("routeJSON");
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(path)
             );
             ObjectMapper objectMapper = new ObjectMapper();
-            Strecke[] strecken = objectMapper.readValue(jsonData, Strecke[].class);
-            for (Strecke strecke : strecken) {
-                getStreckeList().add(strecke);
+            Route[] routes = objectMapper.readValue(jsonData, Route[].class);
+            for (Route route : routes) {
+                getRouteList().add(route);
             }
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -338,21 +338,21 @@ public class DataHandler {
      *
      * @return value of bookList
      */
-    private static List<Reise> getReiseList() {
-        if (reiseList == null) {
-            setReiseList(new ArrayList<>());
-            readReiseJSON();
+    private static List<Journey> getJourneyList() {
+        if (journeyList == null) {
+            setJourneyList(new ArrayList<>());
+            readJourneyJSON();
         }
-        return reiseList;
+        return journeyList;
     }
 
     /**
      * sets reiselist
      *
-     * @param reiseList the value to set
+     * @param journeyList the value to set
      */
-    private static void setReiseList(List<Reise> reiseList) {
-        DataHandler.reiseList = reiseList;
+    private static void setJourneyList(List<Journey> journeyList) {
+        DataHandler.journeyList = journeyList;
     }
 
     /**
@@ -360,23 +360,23 @@ public class DataHandler {
      *
      * @return value of ferienzielList
      */
-    private static List<Ferienziel> getFerienzielList() {
-        if (ferienzielList == null) {
-            setFerienzielList(new ArrayList<>());
-            readFerienzielJSON();
-            readReiseJSON();
+    private static List<Destination> getDestinationList() {
+        if (destinationList == null) {
+            setDestinationList(new ArrayList<>());
+            readDestinationJSON();
+            readJourneyJSON();
         }
 
-        return ferienzielList;
+        return destinationList;
     }
 
     /**
      * sets ferienziellist
      *
-     * @param ferienzielList the value to set
+     * @param destinationList the value to set
      */
-    private static void setFerienzielList(List<Ferienziel> ferienzielList) {
-        DataHandler.ferienzielList = ferienzielList;
+    private static void setDestinationList(List<Destination> destinationList) {
+        DataHandler.destinationList = destinationList;
     }
 
     /**
@@ -385,23 +385,23 @@ public class DataHandler {
      * @return value of streckenlist
      */
 
-    public static List<Strecke> getStreckeList() {
-        if (streckeList == null) {
-            setStreckeList(new ArrayList<>());
-            readStreckeJSON();
-            readReiseJSON();
+    public static List<Route> getRouteList() {
+        if (routeList == null) {
+            setRouteList(new ArrayList<>());
+            readRouteJSON();
+            readJourneyJSON();
         }
 
-        return streckeList;
+        return routeList;
     }
 
 
     /**
      * sets streckeList
      *
-     * @param streckeList the value to set
+     * @param routeList the value to set
      */
-    public static void setStreckeList(List<Strecke> streckeList) {
-        DataHandler.streckeList = streckeList;
+    public static void setRouteList(List<Route> routeList) {
+        DataHandler.routeList = routeList;
     }
 }

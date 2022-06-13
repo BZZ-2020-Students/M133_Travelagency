@@ -1,7 +1,7 @@
 package ch.bzz.reisebuero.service;
 
 import ch.bzz.reisebuero.data.DataHandler;
-import ch.bzz.reisebuero.model.Strecke;
+import ch.bzz.reisebuero.model.Route;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.validation.constraints.*;
@@ -12,23 +12,23 @@ import jakarta.ws.rs.core.Response;
 import java.util.List;
 import java.util.UUID;
 
-@Path("strecke")
-public class Streckeservice {
+@Path("route")
+public class Routeservice {
 
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response listStrecke() {
-        List<Strecke> streckeList = DataHandler.readallStrecke();
+    public Response listRoute() {
+        List<Route> routeList = DataHandler.readallRoute();
         try {
             return Response
                     .status(200)
-                    .entity(new ObjectMapper().writeValueAsString(streckeList))
+                    .entity(new ObjectMapper().writeValueAsString(routeList))
                     .build();
         } catch (JsonProcessingException e) {
             return Response
                     .status(500)
-                    .entity("Fehler beim Serialisieren der Strecken")
+                    .entity("Error could not serialize route")
                     .build();
         }
     }
@@ -36,67 +36,67 @@ public class Streckeservice {
     @GET
     @Path("read/{uuid}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response readReise(
-            @PathParam("uuid") String streckeUUID
+    public Response readRoute(
+            @PathParam("uuid") String routeUUID
     ) {
-        Strecke strecke = DataHandler.readStreckebyUUID(streckeUUID);
-        if (strecke == null) {
+        Route route = DataHandler.readRoutebyUUID(routeUUID);
+        if (route == null) {
             return Response
                     .status(404)
-                    .entity("Strecke nicht gefunden")
+                    .entity("route not found")
                     .build();
         }
         return Response
                 .status(200)
-                .entity(strecke)
+                .entity(route)
                 .build();
     }
 
     @DELETE
     @Path("delete/{uuid}")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response deleteStrecke(
-            @PathParam("uuid") String streckeUUID
+    public Response deleteRoute(
+            @PathParam("uuid") String routeUUID
     ) {
         int httpStatus = 200;
-        if (!DataHandler.deleteStrecke(streckeUUID)) {
+        if (!DataHandler.deleteRoute(routeUUID)) {
             httpStatus = 410;
         }
         return Response
                 .status(httpStatus)
-                .entity("")
+                .entity("has been deleted")
                 .build();
     }
 
     @Path("create")
     @POST
     @Produces(MediaType.TEXT_PLAIN)
-    public Response insertReise(
-            @FormParam("distanz")
+    public Response insertRoute(
+            @FormParam("distance")
             @NotEmpty
             @Min(value = 1)
             @Max(value = 5)
                     //@Range(min=1,max=5)
-                    Float distanz,
+                    Float distance,
 
-            @FormParam("UUID")
+            @FormParam("journeyUUID")
             @NotEmpty
             @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
-                    String reiseUUID
+                    String journeyUUID
     ) {
 
         int httpStatus = 200;
 
-        Strecke strecke = new Strecke();
-        strecke.setStreckeUUID(String.valueOf(UUID.randomUUID()));
-        strecke.setDistanz(distanz);
-        strecke.setReiseUUID(reiseUUID);
-        DataHandler.insertStrecke(strecke);
+        Route route = new Route();
+        route.setRouteUUID(String.valueOf(UUID.randomUUID()));
+        route.setDistance(distance);
+        route.setJourneyUUID(journeyUUID);
+        DataHandler.insertRoute(route);
 
 
         return Response
                 .status(httpStatus)
-                .entity("wurde erschaffen")
+                .entity("has been created")
                 .build();
     }
 
@@ -105,36 +105,36 @@ public class Streckeservice {
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateReise(
 
-            @FormParam("UUID")
+            @FormParam("routeUUID")
             @NotEmpty
             @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
-                    String streckeUUID,
+                    String routeUUID,
 
-            @FormParam("distanz")
+            @FormParam("distance")
             @NotEmpty
             @Min(value = 1)
             @Max(value = 5)
                     //@Range(min=1,max=5)
-                    Float distanz,
+                    Float distance,
 
-            @FormParam("UUID")
+            @FormParam("journeyUUID")
             @NotEmpty
             @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
-                    String reiseUUID
+                    String journeyUUID
     ) {
         int httpStatus = 200;
-        Strecke strecke = DataHandler.readStreckebyUUID(streckeUUID);
-        if (strecke != null) {
-            strecke.setStreckeUUID(streckeUUID);
-            strecke.setDistanz(distanz);
-            strecke.setReiseUUID(reiseUUID);
-            DataHandler.updateStrecke();
+        Route route = DataHandler.readRoutebyUUID(routeUUID);
+        if (route != null) {
+            route.setRouteUUID(routeUUID);
+            route.setDistance(distance);
+            route.setJourneyUUID(journeyUUID);
+            DataHandler.updateRoute();
         } else {
             httpStatus = 410;
         }
         return Response
                 .status(httpStatus)
-                .entity("wurde geupdated")
+                .entity("has been updated")
                 .build();
 
     }

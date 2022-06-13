@@ -18,7 +18,7 @@ import java.util.Set;
 @ApplicationPath("/resource")
 
 public class Config extends Application {
-    private static final String PROPERTIES_PATH = "C:\\Github\\M133_Reisebuero\\testing\\reiseList.properties";
+    private static final String PROPERTIES_PATH = "C:\\Github\\M133_Reisebuero\\testing\\journeyList.properties";
     private static Properties properties = null;
 
     /**
@@ -29,9 +29,9 @@ public class Config extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         HashSet providers = new HashSet<Class<?>>();
-        providers.add(Reiseservice.class);
-        providers.add(Ferienzielservice.class);
-        providers.add(Streckeservice.class);
+        providers.add(Journeyservice.class);
+        providers.add(Destinationservice.class);
+        providers.add(Routeservice.class);
         providers.add(TestService.class);
         return providers;
     }
