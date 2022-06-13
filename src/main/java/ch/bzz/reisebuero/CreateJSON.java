@@ -20,12 +20,12 @@ public class CreateJSON {
                 new Destination(UUID.randomUUID().toString(), "mueller", "strasse","marc")
         };
         Journey[] journey = {
-                new Journey(destination[0],UUID.randomUUID().toString(), "11/12-2022", 0.5f, 6, 5),
-                new Journey(destination[1], UUID.randomUUID().toString(), "11-22-2123", 4.5f, 21, 3),
+                new Journey(destination[0],UUID.randomUUID().toString(), "11-12-2022", 0.5f, 6, 5),
+                new Journey(destination[1], UUID.randomUUID().toString(), "01-12-2123", 4.5f, 21, 3),
         };
 
 
-        Route[] strecken = {
+        Route[] routes = {
                 new Route(UUID.randomUUID().toString(),34f, journey[1]),
                 new Route(UUID.randomUUID().toString(),65f, journey[0])
         };
@@ -35,7 +35,7 @@ public class CreateJSON {
         try {
             om.writeValue(Paths.get("C:/Github/M133_Reisebuero/testing/journey.json").toFile(), journey);
             om.writeValue(Paths.get("C:/Github/M133_Reisebuero/testing/destination.json").toFile(), destination);
-            om.writeValue(Paths.get("C:/Github/M133_Reisebuero/testing/route.json").toFile(), strecken);
+            om.writeValue(Paths.get("C:/Github/M133_Reisebuero/testing/route.json").toFile(), routes);
 
 
         } catch (IOException e) {
