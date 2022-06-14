@@ -21,7 +21,6 @@ import java.util.List;
  * reads and writes the data in the JSON-files
  */
 public class DataHandler {
-    private static DataHandler instance = null;
     private static List<Journey> journeyList;
     private static List<Destination> destinationList;
     private static List<Route> routeList;
@@ -37,17 +36,9 @@ public class DataHandler {
         setRouteList(new ArrayList<>());
         readRouteJSON();
     }
+   
 
-    /**
-     * gets the only instance of this class
-     *
-     * @return datahandler
-     */
-    public static DataHandler getInstance() {
-        if (instance == null)
-            instance = new DataHandler();
-        return instance;
-    }
+
 
 
     /**
@@ -196,7 +187,7 @@ public class DataHandler {
     }
 
     /**
-     * updates the StreckeList
+     * updates the RouteList
      */
     public static void updateRoute() {
         writeRouteJSON();

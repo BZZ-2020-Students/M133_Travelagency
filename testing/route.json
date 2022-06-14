@@ -1,1 +1,42 @@
-[{"distance":34.0,"journey":{"journeyUUID":"27ab2288-aa1b-4d4c-a68c-91d0fa413779","date":"01-12-2123","price":4.5,"numbPers":21,"rating":3,"destinationUUID":"36b835cf-d2ee-458b-bc93-c1bdfd7e9b8c"},"journeyUUID":"27ab2288-aa1b-4d4c-a68c-91d0fa413779","reise":{"journeyUUID":"27ab2288-aa1b-4d4c-a68c-91d0fa413779","date":"01-12-2123","price":4.5,"numbPers":21,"rating":3,"destinationUUID":"36b835cf-d2ee-458b-bc93-c1bdfd7e9b8c"}},{"distance":65.0,"journey":{"journeyUUID":"0bcb43fb-ccbc-4ee6-be67-8dca01154704","date":"11-12-2022","price":0.5,"numbPers":6,"rating":5,"destinationUUID":"2c7bd3ab-a761-4e20-8cb6-184bd78ed923"},"journeyUUID":"0bcb43fb-ccbc-4ee6-be67-8dca01154704","reise":{"journeyUUID":"0bcb43fb-ccbc-4ee6-be67-8dca01154704","date":"11-12-2022","price":0.5,"numbPers":6,"rating":5,"destinationUUID":"2c7bd3ab-a761-4e20-8cb6-184bd78ed923"}}]
+[
+  {
+    "distance": 34.0,
+    "journey": {
+      "journeyUUID": "19c0696e-7e87-4661-998a-2ee6bb8ff864",
+      "date": "01-12-2123",
+      "price": 4.5,
+      "numbPers": 21,
+      "rating": 3,
+      "destinationUUID": "5b3b43cb-cf4b-40f8-99b2-6b910bad960b"
+    },
+    "journeyUUID": "19c0696e-7e87-4661-998a-2ee6bb8ff864",
+    "reise": {
+      "journeyUUID": "19c0696e-7e87-4661-998a-2ee6bb8ff864",
+      "date": "01-12-2123",
+      "price": 4.5,
+      "numbPers": 21,
+      "rating": 3,
+      "destinationUUID": "5b3b43cb-cf4b-40f8-99b2-6b910bad960b"
+    }
+  },
+  {
+    "distance": 65.0,
+    "journey": {
+      "journeyUUID": "69fe26a9-6969-4b18-ae92-056e13800fc3",
+      "date": "11-12-2022",
+      "price": 0.5,
+      "numbPers": 6,
+      "rating": 5,
+      "destinationUUID": "1b05f0d3-2920-4039-b6ef-9fd25fbd2690"
+    },
+    "journeyUUID": "69fe26a9-6969-4b18-ae92-056e13800fc3",
+    "reise": {
+      "journeyUUID": "69fe26a9-6969-4b18-ae92-056e13800fc3",
+      "date": "11-12-2022",
+      "price": 0.5,
+      "numbPers": 6,
+      "rating": 5,
+      "destinationUUID": "1b05f0d3-2920-4039-b6ef-9fd25fbd2690"
+    }
+  }
+]

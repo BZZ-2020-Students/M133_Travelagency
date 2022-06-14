@@ -74,8 +74,8 @@ public class Routeservice {
     public Response insertRoute(
             @FormParam("distance")
             @NotEmpty
-            @Min(value = 1)
-            @Max(value = 5)
+            @DecimalMax(value = "99999.95")
+            @DecimalMin(value = "0.05")
                     //@Range(min=1,max=5)
                     Float distance,
 
