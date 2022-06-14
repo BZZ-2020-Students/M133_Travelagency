@@ -33,4 +33,74 @@
   "numbPers" : 3,
   "rating" : 2,
   "destinationUUID" : "1b05f0d3-2920-4039-b6ef-9fd25fbd2690"
+}, {
+  "journeyUUID" : "69fe26a9-6969-4b18-ae92-056e13800fc3",
+  "date" : "11-12-2022",
+  "price" : 0.5,
+  "numbPers" : 6,
+  "rating" : 5,
+  "destinationUUID" : "1b05f0d3-2920-4039-b6ef-9fd25fbd2690"
+}, {
+  "journeyUUID" : "19c0696e-7e87-4661-998a-2ee6bb8ff864",
+  "date" : "01-12-2123",
+  "price" : 4.5,
+  "numbPers" : 21,
+  "rating" : 3,
+  "destinationUUID" : "5b3b43cb-cf4b-40f8-99b2-6b910bad960b"
+}, {
+  "journeyUUID" : "69fe26a9-6969-4b18-ae92-056e13800fc3",
+  "date" : "11-12-2022",
+  "price" : 0.5,
+  "numbPers" : 6,
+  "rating" : 5,
+  "destinationUUID" : "1b05f0d3-2920-4039-b6ef-9fd25fbd2690"
+}, {
+  "journeyUUID" : "19c0696e-7e87-4661-998a-2ee6bb8ff864",
+  "date" : "01-12-2123",
+  "price" : 4.5,
+  "numbPers" : 21,
+  "rating" : 3,
+  "destinationUUID" : "5b3b43cb-cf4b-40f8-99b2-6b910bad960b"
+}, {
+  "journeyUUID" : "75cc0808-f298-4859-8685-1ab53379f4ce",
+  "date" : "01/01/2022",
+  "price" : 9.05,
+  "numbPers" : 3,
+  "rating" : 2,
+  "destinationUUID" : "1b05f0d3-2920-4039-b6ef-9fd25fbd2690"
+}, {
+  "journeyUUID" : "69fe26a9-6969-4b18-ae92-056e13800fc3",
+  "date" : "11-12-2022",
+  "price" : 0.5,
+  "numbPers" : 6,
+  "rating" : 5,
+  "destinationUUID" : "1b05f0d3-2920-4039-b6ef-9fd25fbd2690"
+}, {
+  "journeyUUID" : "19c0696e-7e87-4661-998a-2ee6bb8ff864",
+  "date" : "01-12-2123",
+  "price" : 4.5,
+  "numbPers" : 21,
+  "rating" : 3,
+  "destinationUUID" : "5b3b43cb-cf4b-40f8-99b2-6b910bad960b"
+}, {
+  "journeyUUID" : "19c0696e-7e87-4661-998a-2ee6bb8ff864",
+  "date" : "01-12-2123",
+  "price" : 4.5,
+  "numbPers" : 21,
+  "rating" : 3,
+  "destinationUUID" : "5b3b43cb-cf4b-40f8-99b2-6b910bad960b"
+}, {
+  "journeyUUID" : "75cc0808-f298-4859-8685-1ab53379f4ce",
+  "date" : "01/01/2022",
+  "price" : 9.05,
+  "numbPers" : 3,
+  "rating" : 2,
+  "destinationUUID" : "1b05f0d3-2920-4039-b6ef-9fd25fbd2690"
+}, {
+  "journeyUUID" : "a2cfecb5-d087-403d-ac4e-9b7a195100dc",
+  "date" : "01/01/2022",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "5b3b43cb-cf4b-40f8-99b2-6b910bad960b"
 } ]

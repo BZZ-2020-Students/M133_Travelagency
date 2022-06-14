@@ -1,11 +1,11 @@
 [ {
-  "destinationUUID" : "1b05f0d3-2920-4039-b6ef-9fd25fbd2690",
-  "location" : "horgen",
-  "street" : "bahnhofstrasse",
-  "country" : "schweiz"
-}, {
   "destinationUUID" : "5b3b43cb-cf4b-40f8-99b2-6b910bad960b",
   "location" : "mueller",
   "street" : "strasse",
   "country" : "marc"
+}, {
+  "destinationUUID" : "f94ae13c-1296-4aff-a519-072589af0a08",
+  "location" : "horgen",
+  "street" : "bahnhofstrasse",
+  "country" : "schweiz"
 } ]
