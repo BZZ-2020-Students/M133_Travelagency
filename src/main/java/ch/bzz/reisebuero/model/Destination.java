@@ -3,7 +3,7 @@ package ch.bzz.reisebuero.model;
 import lombok.*;
 
 /**
- * a ferienziel in reisebüro
+ * a destination in reisebuero
  */
 
 @Builder

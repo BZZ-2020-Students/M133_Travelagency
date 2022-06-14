@@ -9,9 +9,9 @@ import lombok.Setter;
 @Setter
 
 public class Route {
+    @JsonIgnore
     private String routeUUID;
     private Float distance;
-    @JsonIgnore
     private Journey journey;
 
     /**

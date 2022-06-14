@@ -8,7 +8,7 @@ import lombok.Setter;
 
 
 /**
- * a reise in reisebüro
+ * a journey in reisebüro
  */
 @Setter
 @Getter

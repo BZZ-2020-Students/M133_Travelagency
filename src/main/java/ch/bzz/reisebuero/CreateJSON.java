@@ -25,7 +25,7 @@ public class CreateJSON {
         };
 
 
-        Route[] routes = {
+        Route[] route = {
                 new Route(UUID.randomUUID().toString(),34f, journey[1]),
                 new Route(UUID.randomUUID().toString(),65f, journey[0])
         };
@@ -35,7 +35,7 @@ public class CreateJSON {
         try {
             om.writeValue(Paths.get("C:/Github/M133_Reisebuero/testing/journey.json").toFile(), journey);
             om.writeValue(Paths.get("C:/Github/M133_Reisebuero/testing/destination.json").toFile(), destination);
-            om.writeValue(Paths.get("C:/Github/M133_Reisebuero/testing/route.json").toFile(), routes);
+            om.writeValue(Paths.get("C:/Github/M133_Reisebuero/testing/route.json").toFile(), route);
 
 
         } catch (IOException e) {

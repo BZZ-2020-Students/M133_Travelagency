@@ -41,7 +41,7 @@ public class DataHandler {
     /**
      * gets the only instance of this class
      *
-     * @return
+     * @return datahandler
      */
     public static DataHandler getInstance() {
         if (instance == null)
@@ -75,9 +75,9 @@ public class DataHandler {
     }
 
     /**
-     * inserts a new book into the reiselist
+     * inserts a new book into the journeyList
      *
-     * @param journey the reise to be saved
+     * @param journey the journey to be saved
      */
     public static void insertJourney(Journey journey) {
         getJourneyList().add(journey);
@@ -92,7 +92,7 @@ public class DataHandler {
     }
 
     /**
-     * deletes a book identified by the reiseUUID
+     * deletes a journey identified by the journeyUUID
      *
      * @param journeyUUID the key
      * @return success=true/false
@@ -110,9 +110,9 @@ public class DataHandler {
 
 
     /**
-     * reads all ferienziele
+     * reads all destination
      *
-     * @return list of ferienziele
+     * @return list of destination
      */
     public static List<Destination> readAllDestination() {
 
@@ -120,9 +120,9 @@ public class DataHandler {
     }
 
     /**
-     * reads a ferienziele by its uuid
+     * reads a destination by its uuid
      *
-     * @return the ferienziel (null=not found)
+     * @return the destination (null=not found)
      */
     public static Destination readDestinationbyUUID(String destinationUUID) {
         Destination destination = null;
@@ -135,9 +135,9 @@ public class DataHandler {
     }
 
     /**
-     * inserts a new publisher into the reiseList
+     * inserts a new destination into the journeyList
      *
-     * @param destination the ferienziel to be saved
+     * @param destination the destination to be saved
      */
     public static void insertDestination(Destination destination) {
         getDestinationList().add(destination);
@@ -145,14 +145,14 @@ public class DataHandler {
     }
 
     /**
-     * updates the ferienzielList
+     * updates the destination
      */
     public static void updateDestination() {
         writeDestinationJSON();
     }
 
     /**
-     * deletes a publisher identified by the ferienzielUUID
+     * deletes a destination identified by the destinationUUID
      *
      * @param destinationUUID the key
      * @return success=true/false
@@ -169,16 +169,16 @@ public class DataHandler {
     }
 
     /**
-     * reads all strecken
+     * reads all routes
      *
-     * @return list of strecken
+     * @return list of routes
      */
     public static List<Route> readallRoute() {
         return getRouteList();
     }
 
     /**
-     * reads the strecke from the JSON-file
+     * reads the route from the JSON-file
      */
     public static Route readRoutebyUUID(String routeUUID) {
         Route route = null;
@@ -303,7 +303,7 @@ public class DataHandler {
         FileOutputStream fileOutputStream = null;
         Writer fileWriter;
 
-        String routePath = Config.getProperty("streckeJSON");
+        String routePath = Config.getProperty("routeJSON");
         try {
             fileOutputStream = new FileOutputStream(routePath);
             fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
