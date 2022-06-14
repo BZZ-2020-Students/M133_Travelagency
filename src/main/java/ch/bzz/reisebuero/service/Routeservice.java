@@ -73,7 +73,6 @@ public class Routeservice {
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertRoute(
             @FormParam("distance")
-            @NotEmpty
             @DecimalMax(value = "99999.95")
             @DecimalMin(value = "0.05")
                     //@Range(min=1,max=5)
