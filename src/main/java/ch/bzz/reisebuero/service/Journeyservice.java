@@ -126,7 +126,7 @@ public class Journeyservice {
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateReise(
-            @FormParam("UUID")
+            @FormParam("journeyUUID")
             @NotEmpty
             @Pattern(regexp = "^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3}-[a-f0-9]{12}")
                     String journeyUUID,
@@ -147,8 +147,8 @@ public class Journeyservice {
 
             @FormParam("price")
             @NotNull
-            @DecimalMax(value = "99999.95")
             @DecimalMin(value = "0.05")
+            @DecimalMax(value = "99999.95")
                     Float price,
 
             @FormParam("numbPers")

@@ -1,11 +1,14 @@
-[ {
-  "destinationUUID" : "5b3b43cb-cf4b-40f8-99b2-6b910bad960b",
-  "location" : "mueller",
-  "street" : "strasse",
-  "country" : "marc"
-}, {
-  "destinationUUID" : "f94ae13c-1296-4aff-a519-072589af0a08",
-  "location" : "horgen",
-  "street" : "bahnhofstrasse",
-  "country" : "schweiz"
-} ]
+[
+  {
+    "destinationUUID": "bb3d7505-b5af-4c38-b779-22d5e1ef2f9e",
+    "location": "meier",
+    "street": "bachweg",
+    "country": "phillip"
+  },
+  {
+    "destinationUUID": "e6ecffbe-7e56-4091-8fd7-9d08b850d37d",
+    "location": "mueller",
+    "street": "strasse",
+    "country": "marc"
+  }
+]
