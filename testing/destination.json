@@ -1,14 +1,26 @@
-[
-  {
-    "destinationUUID": "bb3d7505-b5af-4c38-b779-22d5e1ef2f9e",
-    "location": "meier",
-    "street": "bachweg",
-    "country": "phillip"
-  },
-  {
-    "destinationUUID": "e6ecffbe-7e56-4091-8fd7-9d08b850d37d",
-    "location": "mueller",
-    "street": "strasse",
-    "country": "marc"
-  }
-]
+[ {
+  "destinationUUID" : "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+  "location" : "meier",
+  "street" : "bachweg",
+  "country" : "phillip"
+}, {
+  "destinationUUID" : "8bb28b32-bce3-4d25-8c1d-dbf5c2b4f5ad",
+  "location" : "mueller",
+  "street" : "strasse",
+  "country" : "marc"
+}, {
+  "destinationUUID" : "b863be80-342c-4b9d-ba29-9e12de72cce1",
+  "location" : "hong kong",
+  "street" : "aw",
+  "country" : "china"
+}, {
+  "destinationUUID" : "03365d34-d1e0-40cf-8ed6-67ae3a39fab7",
+  "location" : "hongkong",
+  "street" : "bahnhofstrasse 33b",
+  "country" : "china"
+}, {
+  "destinationUUID" : "26237920-942d-42d4-baa6-62908d14ffc5",
+  "location" : "hongkong",
+  "street" : "bahnhofstrasse",
+  "country" : "china"
+} ]
