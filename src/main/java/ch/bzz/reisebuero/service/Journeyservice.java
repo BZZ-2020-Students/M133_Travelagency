@@ -12,9 +12,16 @@ import jakarta.ws.rs.core.Response;
 import java.util.List;
 import java.util.UUID;
 
+/**
+ * services for reading, adding, changing and deleting journeys
+ */
 @Path("journey")
 public class Journeyservice {
 
+    /**
+     * reads a list of all journeys
+     * @return  journeys as JSON
+     */
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
@@ -33,6 +40,11 @@ public class Journeyservice {
         }
     }
 
+    /**
+     * reads a journey identified by the uuid
+     * @param journeyUUID the key
+     * @return journey
+     */
     @GET
     @Path("read/{uuid}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -52,6 +64,11 @@ public class Journeyservice {
                 .build();
     }
 
+    /**
+     * deletes a journey identified by its uuid
+     * @param journeyUUID  the key
+     * @return  Response
+     */
     @DELETE
     @Path("delete/{uuid}")
     @Produces(MediaType.TEXT_PLAIN)
@@ -67,6 +84,11 @@ public class Journeyservice {
                 .build();
     }
 
+    /**
+     * inserts a new journey
+     * @param destinationUUID the uuid of the destination
+     * @return Response
+     */
     @Path("create")
     @POST
     @Produces(MediaType.TEXT_PLAIN)
@@ -120,6 +142,11 @@ public class Journeyservice {
                 .build();
     }
 
+    /**
+     * updates a new journey
+     * @param destinationUUID the uuid of the destination
+     * @return Response
+     */
     @PUT
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
