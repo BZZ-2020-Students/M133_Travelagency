@@ -5,9 +5,12 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
+
+/**
+ * a route in Travelagency
+ */
 @Getter
 @Setter
-
 public class Route {
     private String routeUUID;
     private Float distance;
@@ -15,7 +18,7 @@ public class Route {
     private Journey journey;
 
     /**
-     * constructor
+     * a constructor
      * */
     public Route(String routeUUID, Float distance, Journey journey) {
         this.routeUUID = routeUUID;
@@ -23,20 +26,22 @@ public class Route {
         this.journey = journey;
     }
     /**
-     * empty constructor
+     *default constructor
      * */
     public Route(){
 
     }
+
     /**
-     * gets reiseuuid
-     * @return value of reiseuuid
+     * gets journeyUUID
+     * @return value of journeyUUID
      */
     public String getJourneyUUID() {
         return getJourney().getJourneyUUID();
     }
+
     /**
-     * creates a reise-object without the reiseList
+     * creates a journey-object without the journeyList
      * @param journeyUUID
      */
     public void setJourneyUUID(String journeyUUID) {
@@ -46,26 +51,56 @@ public class Route {
         setJourney(journey);
     }
 
+    /**
+     * gets routUUID
+     *
+     * @return value of routUUID
+     */
     public String getRouteUUID() {
         return routeUUID;
     }
 
+    /**
+     * sets routeUUID
+     *
+     * @param routeUUID the value to set
+     */
     public void setRouteUUID(String routeUUID) {
         this.routeUUID = routeUUID;
     }
 
+    /**
+     * gets distance
+     *
+     * @return value of distance
+     */
     public Float getDistance() {
         return distance;
     }
 
+    /**
+     * sets distance
+     *
+     * @param distance the value to set
+     */
     public void setDistance(Float distance) {
         this.distance = distance;
     }
 
-    public Journey getReise() {
+    /**
+     * gets journey
+     *
+     * @return value of journey
+     */
+    public Journey getJourney() {
         return journey;
     }
 
+    /**
+     * sets journey
+     *
+     * @param journey the value to set
+     */
     public void setJourney(Journey journey) {
         this.journey = journey;
     }

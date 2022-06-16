@@ -8,7 +8,7 @@ import lombok.Setter;
 
 
 /**
- * a journey in reisebüro
+ * a journey in Travelagency
  */
 @Setter
 @Getter
@@ -22,9 +22,8 @@ public class Journey {
     private Destination destination;
 
     /**
-     * constructor
+     * a constructor
      */
-
     public Journey(Destination destination, String journeyUUID, String date, Float price, Integer numbPers, Integer rating) {
         this.destination = destination;
         this.journeyUUID = journeyUUID;
@@ -35,25 +34,24 @@ public class Journey {
     }
 
     /**
-     * empty constructor
+     * default constructor
      */
     public Journey() {
 
     }
 
     /**
-     * gets ferienzielUUID
+     * gets destinationUUID
      *
-     * @return value of ferienziel
+     * @return value of destinationUUID
      */
-
     public String getDestinationUUID() {
         if (getDestination() == null) return null;
         return getDestination().getDestinationUUID();
     }
 
     /**
-     * creates a ferienziel-object without the reiseList
+     * creates a destination-object without the journeyList
      *
      * @param destinationUUID
      */
@@ -66,50 +64,110 @@ public class Journey {
         getDestination().setLocation(destination.getLocation());
     }
 
+    /**
+     * gets journeyUUID
+     *
+     * @return value of journeyUUID
+     */
     public String getJourneyUUID() {
         return journeyUUID;
     }
 
+    /**
+     * sets journeyUUID
+     *
+     * @param journeyUUID the value to set
+     */
     public void setJourneyUUID(String journeyUUID) {
         this.journeyUUID = journeyUUID;
     }
 
+    /**
+     * gets date
+     *
+     * @return value of date
+     */
     public String getDate() {
         return date;
     }
 
+    /**
+     * sets date
+     *
+     * @param date the value to set
+     */
     public void setDate(String date) {
         this.date = date;
     }
 
+    /**
+     * gets price
+     *
+     * @return value of price
+     */
     public Float getPrice() {
         return price;
     }
 
+    /**
+     * sets price
+     *
+     * @param price the value to set
+     */
     public void setPrice(Float price) {
         this.price = price;
     }
 
+    /**
+     * gets numbPers
+     *
+     * @return value of numbPers
+     */
     public Integer getNumbPers() {
         return numbPers;
     }
 
+    /**
+     * sets numbPers
+     *
+     * @param numbPers the value to set
+     */
     public void setNumbPers(Integer numbPers) {
         this.numbPers = numbPers;
     }
 
+    /**
+     * gets rating
+     *
+     * @return value of rating
+     */
     public Integer getRating() {
         return rating;
     }
 
+    /**
+     * sets rating
+     *
+     * @param rating the value to set
+     */
     public void setRating(Integer rating) {
         this.rating = rating;
     }
 
+    /**
+     * gets destination
+     *
+     * @return value of destination
+     */
     public Destination getDestination() {
         return destination;
     }
 
+    /**
+     * sets destination
+     *
+     * @param destination the value to set
+     */
     public void setDestination(Destination destination) {
         this.destination = destination;
     }

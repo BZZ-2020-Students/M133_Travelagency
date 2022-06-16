@@ -42,18 +42,18 @@ public class DataHandler {
 
 
     /**
-     * reads all reise
+     * reads all jounrey
      *
-     * @return list of books
+     * @return list of journeys
      */
     public static List<Journey> readallJourney() {
         return getJourneyList();
     }
 
     /**
-     * reads a reise by its uuid
+     * reads a journey by its uuid
      *
-     * @return the reise (null=not found)
+     * @return the journey (null=not found)
      */
     public static Journey readJourneyByUUID(String journeyUUID) {
         Journey journey = null;
@@ -66,7 +66,7 @@ public class DataHandler {
     }
 
     /**
-     * inserts a new book into the journeyList
+     * inserts a new journey into the journeyList
      *
      * @param journey the journey to be saved
      */
@@ -76,7 +76,7 @@ public class DataHandler {
     }
 
     /**
-     * updates the reiseList
+     * updates the journeyList
      */
     public static void updateJourney() {
         writeJourneyJSON();
@@ -84,7 +84,6 @@ public class DataHandler {
 
     /**
      * deletes a journey identified by the journeyUUID
-     *
      * @param journeyUUID the key
      * @return success=true/false
      */
@@ -112,7 +111,7 @@ public class DataHandler {
 
     /**
      * reads a destination by its uuid
-     *
+     * @param destinationUUID
      * @return the destination (null=not found)
      */
     public static Destination readDestinationbyUUID(String destinationUUID) {
@@ -144,7 +143,6 @@ public class DataHandler {
 
     /**
      * deletes a destination identified by the destinationUUID
-     *
      * @param destinationUUID the key
      * @return success=true/false
      */
@@ -161,7 +159,6 @@ public class DataHandler {
 
     /**
      * reads all routes
-     *
      * @return list of routes
      */
     public static List<Route> readallRoute() {
@@ -181,6 +178,10 @@ public class DataHandler {
         return route;
     }
 
+    /**
+     * inserts a new route into the routelist
+     * @param route the route to be saved
+     * */
     public static void insertRoute(Route route) {
         getRouteList().add(route);
         writeRouteJSON();
@@ -194,7 +195,7 @@ public class DataHandler {
     }
 
     /**
-     * deletes a publisher identified by the ferienzielUUID
+     * deletes a route identified by the routeUUID
      *
      * @param routeUUID the key
      * @return success=true/false
@@ -211,7 +212,7 @@ public class DataHandler {
     }
 
     /**
-     * reads the ferienziel from the JSON-file
+     * reads the journey from the JSON-file
      */
     private static void readJourneyJSON() {
         try {
@@ -230,7 +231,7 @@ public class DataHandler {
     }
 
     /**
-     * writes the bookList to the JSON-file
+     * writes the journeyList to the JSON-file
      */
     private static void writeJourneyJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -249,7 +250,7 @@ public class DataHandler {
     }
 
     /**
-     * reads the ferienziel from the JSON-file
+     * reads the destination from the JSON-file
      */
     private static void readDestinationJSON() {
         try {
@@ -270,7 +271,7 @@ public class DataHandler {
 
 
     /**
-     * writes the publisherList to the JSON-file
+     * writes the destinationList to the JSON-file
      */
     private static void writeDestinationJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -288,6 +289,9 @@ public class DataHandler {
         }
     }
 
+    /**
+     * writes the routeList to the JSON-File
+     * */
     private static void writeRouteJSON() {
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
@@ -306,7 +310,7 @@ public class DataHandler {
 
 
     /**
-     * reads the strecke from the JSON-file
+     * reads the route from the JSON-file
      */
     private static void readRouteJSON() {
         try {
@@ -325,9 +329,9 @@ public class DataHandler {
     }
 
     /**
-     * gets reiselist
+     * gets journeyList
      *
-     * @return value of bookList
+     * @return value of journeyList
      */
     private static List<Journey> getJourneyList() {
         if (journeyList == null) {
@@ -338,7 +342,7 @@ public class DataHandler {
     }
 
     /**
-     * sets reiselist
+     * sets journeyList
      *
      * @param journeyList the value to set
      */
@@ -347,9 +351,9 @@ public class DataHandler {
     }
 
     /**
-     * gets ferienziellist
+     * gets destinationList
      *
-     * @return value of ferienzielList
+     * @return value of destinationList
      */
     private static List<Destination> getDestinationList() {
         if (destinationList == null) {
@@ -362,7 +366,7 @@ public class DataHandler {
     }
 
     /**
-     * sets ferienziellist
+     * sets destinationList
      *
      * @param destinationList the value to set
      */
@@ -371,9 +375,9 @@ public class DataHandler {
     }
 
     /**
-     * gets streckenlist
+     * gets routeList
      *
-     * @return value of streckenlist
+     * @return value of routeList
      */
 
     public static List<Route> getRouteList() {
@@ -388,7 +392,7 @@ public class DataHandler {
 
 
     /**
-     * sets streckeList
+     * sets routeList
      *
      * @param routeList the value to set
      */
