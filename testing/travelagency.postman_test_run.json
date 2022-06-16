@@ -1,0 +1,2839 @@
+{
+	"id": "b5c11366-3014-489c-94c3-8bad8b2c4f88",
+	"name": "travelagency",
+	"timestamp": "2022-06-16T08:52:33.152Z",
+	"collection_id": "20899708-b1bcf4b8-3369-47e6-9429-da25d7820fde",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 88,
+	"totalFail": 3,
+	"results": [
+		{
+			"id": "47ddf317-eaf9-48d2-a95d-919dbf57f0b7",
+			"name": "Journey query read successful",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/read/3dd25846-a915-4f68-b35f-b812be5a5c74",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "53850ec7-d6a4-421a-b897-456c42c5639b",
+			"name": "journey query read failed",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/read/5dfba463-aaf-4794-9bde-904fb10be3a",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status test 404": true
+			},
+			"testPassFailCounts": {
+				"Status test 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status test 404": true
+				}
+			]
+		},
+		{
+			"id": "84cf2763-a19e-4d75-ac29-903e72133f50",
+			"name": "journey query read failed missing uuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/read/",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "1b97455d-db95-4ee3-9be3-1aa796021895",
+			"name": "journey query delete successful",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/delete/49f3a8fb-d170-441e-bf56-c2fd0f25af9b",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "01577c70-e8d0-4e9d-b2b5-0204bfa3c3db",
+			"name": "journey query delete fail wrong uuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/delete/",
+			"time": 2,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "51f7ad06-537a-4aeb-bfcd-fef3d4692fb8",
+			"name": "journey query delete failed missing uuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/delete/",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "8b93d517-8927-4f9c-bc34-da902db6b959",
+			"name": "joureny query create",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 15,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				15
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "3b9d6e6f-cf46-41e0-8df8-2af5eb7e6107",
+			"name": "joureny query create fail date right characters",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "d977af6d-6548-4c96-8e79-13e215512036",
+			"name": "joureny query create fail date right characters",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "01b959a1-4a15-4721-a92a-db9616eeec10",
+			"name": "joureny query create fail destination uuid wrong",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "fd057cd0-75a2-4579-95c5-eaedd5e1acc2",
+			"name": "joureny query create fail no destination uuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "e283f353-0a8d-4d10-9863-4e15353bcde3",
+			"name": "joureny query create fail date wrong characters",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 8,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "058d3b38-d1b1-4760-9698-d51e84629e7d",
+			"name": "joureny query create fail date wrong date",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "9bc3a54e-1843-4a74-82e8-e815ee4ebad1",
+			"name": "joureny query create fail no date",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 10,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "da94a6b5-5408-4866-9d7f-3bae28bff020",
+			"name": "joureny query create fail price to small",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "3fa8489f-3069-4456-8fc1-34980478ddd6",
+			"name": "joureny query create fail price to high",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 9,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "cb7e353a-50db-4779-9d23-792faf9c441c",
+			"name": "joureny query create fail no price",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "ea9a2cc7-8cfd-41e5-9b65-e2ac1ede432d",
+			"name": "joureny query create fail numbPers to small",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "e8e42c5d-f6d5-421d-82bd-f6edeb3a3750",
+			"name": "joureny query create fail numbPers to high",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "fbc0390f-5d2a-4405-ac47-db292714b50f",
+			"name": "joureny query create fail no numbPers",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "a9babd4c-3228-4ac6-b344-e0b816ddbfc7",
+			"name": "joureny query create fail rating to small",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "23aaee90-f48c-4f2e-9601-ee6cbb530b80",
+			"name": "joureny query create fail rating to big",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "9e476465-f912-4198-bff6-31759e29cd6b",
+			"name": "joureny query create fail no rating",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "90d97dae-4537-4e58-a584-540ea1712a51",
+			"name": "journey query update",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "087871cc-92a4-4771-8900-dbaf1ca9a798",
+			"name": "journey query update fail wrong uuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "955e9ab4-f40b-4a82-a532-aa08d20091eb",
+			"name": "journey query update fail no journeyuuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "9c0b6d1f-31c5-42ca-8d41-484be3e0307f",
+			"name": "journey query update fail wrong destinationiuuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 9,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "9d6f01ca-c481-47fb-95d8-bc9bcf7bf521",
+			"name": "journey query update fail no destinationuuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "4092075f-d424-4cf9-979b-d1badaf8c615",
+			"name": "joureny query update fail date wrong characters",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "9ea667a7-0bc5-4bef-9c47-d976a052dc99",
+			"name": "joureny query update fail date wrong date",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "1653db66-1baa-4be7-8f19-76a4fc45e148",
+			"name": "joureny query update fail no date",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "f7707462-2c3a-4986-99df-aaaefa18d5dc",
+			"name": "joureny query update fail price to small",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 9,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "799d290e-d656-47d0-83ea-5a9c8d0e7db7",
+			"name": "joureny query update fail price to big",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "51e14571-a659-441f-8eb4-20d967b1a080",
+			"name": "joureny query update fail no price",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "b1959b7a-774f-4491-a930-fa98b46ea668",
+			"name": "joureny query update fail numbPers to small",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 8,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "e3ffcb9e-cc69-4d61-ab2b-3cad945a1155",
+			"name": "joureny query update fail numbPers to big",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "c1430818-e89a-496d-8839-ea6b7efabc8f",
+			"name": "joureny query update fail no numbPers",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "4f3ba513-bab8-4fba-a998-030543a86244",
+			"name": "joureny query update fail rating to small",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "0c196440-1511-4074-abe4-ccf73b1160c9",
+			"name": "joureny query update fail rating to big",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "cc066a78-326a-49f2-97ea-5a6a9c961cc9",
+			"name": "joureny query update fail no rating",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "6c28d306-4638-4898-93b7-fcef113f611e",
+			"name": "journey query list",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/list",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "7570b4b7-f82b-4d02-9d01-1b68674aa4ee",
+			"name": "destination query read successful",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/read/dd5a1584-c066-4498-b2f5-bfa972df8195",
+			"time": 3,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "56f37aba-a7e8-4fee-986e-a6f582148d79",
+			"name": "destination query read failed",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/read/902d9927-15b8-4dd1-b07b-930e6a0f773",
+			"time": 3,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status test 404": true
+			},
+			"testPassFailCounts": {
+				"Status test 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status test 404": true
+				}
+			]
+		},
+		{
+			"id": "12e9832b-199c-4e9a-8069-5975f97c38d1",
+			"name": "destination query read failed wrong uuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/read/",
+			"time": 2,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "af2f69ef-4283-4bbb-827a-6ae26a138803",
+			"name": "destination query delete",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/delete/ab1db4b0-41d5-46ea-80b6-83c246935d526",
+			"time": 7,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {
+				"Status test 200": false
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 200": false
+				}
+			]
+		},
+		{
+			"id": "5670b72f-e534-447c-ac2b-37f2ac9f16f4",
+			"name": "destination query delete wrong uuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/delete/",
+			"time": 2,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "70afca75-6121-46a9-8f68-283e931c67c5",
+			"name": "destination query delete no uuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/delete/",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "6e984b2b-e965-4a01-b01e-ff3f23ace31b",
+			"name": "destination query create",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+			"time": 11,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "424dfc88-2e37-4375-ac8d-1c77f687871b",
+			"name": "destination query create fail to many characters",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "e34947d4-bc80-41e6-a463-731cc745b685",
+			"name": "destination query create fail not enough characters",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "27111231-6443-4471-9ef9-3d3ab04e53ee",
+			"name": "destination query create fail no location",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "2bc5afe6-0b56-41ef-9db1-cee40ccfd9b3",
+			"name": "destination query create fail to many characters",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "4b8a74e7-a900-4203-bc7f-936f22aaeffa",
+			"name": "destination query create fail not enough characters",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "c2f53a82-f353-486d-a7ab-e0c6d9a585c8",
+			"name": "destination query create fail no street",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "ab7f0167-dac3-4133-9230-d3fb056c4915",
+			"name": "destination query create fail to many characaters",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "56a2ceff-4467-42c0-8dad-b8f35e2df421",
+			"name": "destination query create fail not enough characters",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "f51d3f03-e7d8-4655-acd9-5f9e5812a015",
+			"name": "destination query create fail no country",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "50f6f105-3e11-4547-b59d-6814fb84ef81",
+			"name": "destination query update",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "e20c9352-8fca-498c-954a-f69e32b8400c",
+			"name": "destination query update fail wrong destinationuuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "df1c37ed-3ea0-425c-8fc4-1f89759c223f",
+			"name": "destination query update fail no destinationuuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "6af6fb40-4f8f-49d2-b00c-6eca9262d1a9",
+			"name": "destination query update fail to many characters",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "d8a28c97-2164-4f55-94fb-b5108977e4b6",
+			"name": "destination query update fail not enough characters",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "29a80d73-37b5-461e-a76c-03ebd1d13770",
+			"name": "destination query update fail no location",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "f3ef43e4-cea2-4e6f-af88-022850a93315",
+			"name": "destination query update fail to many characters",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "4bbe7d9f-028f-4a1c-9238-7dc0d41274a3",
+			"name": "destination query update fail not enough characters",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "64495fca-16c9-4d89-9494-2b47d9ceb665",
+			"name": "destination query update fail no street",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "9b39b842-78c4-45e4-9c46-ec44ec325110",
+			"name": "destination query update fail to many characters",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+			"time": 8,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "355200ca-2a30-457b-85a6-90059a94e414",
+			"name": "destination query update fail not enough characters",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "ab1bb396-aa55-4aec-ae81-8ecff18c3a53",
+			"name": "destination query update fail no country",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "ff9963b7-6cf6-4115-8723-a5ea3e678c6d",
+			"name": "destination query list",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/list",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "0bffa2e8-e2e0-4c1d-9619-ba20d2ab93df",
+			"name": "route query read successful",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/read/7c4a7d15-4a6d-408c-9823-308a54ad2628",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "5ea72c07-3302-40eb-8f4a-9958144e64a0",
+			"name": "route query read failed",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/read/",
+			"time": 2,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "71a19535-94e4-4c17-9ef9-0ac9a1911c49",
+			"name": "route query read wrong uuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/read",
+			"time": 3,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				3
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "25bef788-9501-4ccc-8b67-380769aa9eff",
+			"name": "route query delete",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/delete/7ba5f54b-5e3e-413a-a6da-df1a9b199551",
+			"time": 8,
+			"responseCode": {
+				"code": 410,
+				"name": "Gone"
+			},
+			"tests": {
+				"Status test 200": false
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status test 200": false
+				}
+			]
+		},
+		{
+			"id": "716ca70e-3366-4717-9105-fefe949c2398",
+			"name": "route query delete fail wrong uuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/delete/",
+			"time": 2,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "3227ea39-7875-4795-9095-a934a1745cdb",
+			"name": "route query delete fail no uuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/delete/",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "59767b29-8dc7-42ea-946b-7570a24ff523",
+			"name": "route query create",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/create",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "a9b57b94-6a75-4435-88cd-61b59280412e",
+			"name": "route query create failed distance to small",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/create",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "6afb609f-660a-41d9-adc0-8389df8679f7",
+			"name": "route query create failed distance to big",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/create",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "7e92a30e-9530-4df9-95fc-b1eddefc9f3f",
+			"name": "route query create failed distance nothing",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/create",
+			"time": 4,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				4
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "71f28ad7-2586-4672-81ae-afb41e29f570",
+			"name": "route query create failed uuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/create",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "ab905ed9-f0ac-4225-9741-2f70b50fba51",
+			"name": "route query create no uuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/create",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "4dbc02a4-c3ba-401b-8fdd-0f5137b44aaa",
+			"name": "route query update",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/update",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status test 200": true
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status test 200": true
+				}
+			]
+		},
+		{
+			"id": "6e74928a-b4a1-48f9-a2b8-1502048e8892",
+			"name": "route query update failed distance to small",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "002b5288-cd0c-450b-8457-ff4db587cee8",
+			"name": "route query update failed distance to big",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/update",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "449d6ef5-a9fd-436b-aebc-27cf9aac2d53",
+			"name": "route query update failed distance no value",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/update",
+			"time": 6,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "562f7c19-f00d-4463-a1d1-ad3c28364ea8",
+			"name": "route query update failed journeyuuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "d394ab3a-78e7-47c2-9912-69c339627bc2",
+			"name": "route query update no journeyuuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "0127a7dd-ee14-4a1d-b795-4684f0994a4d",
+			"name": "route query update failed routeuuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "9f036996-dc5e-47ce-b82f-093f5be2329e",
+			"name": "route query update no routeuuid",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/update",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status test 400": true
+			},
+			"testPassFailCounts": {
+				"Status test 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"Status test 400": true
+				}
+			]
+		},
+		{
+			"id": "b58f9e4d-5e4d-4635-b80c-8a46e6ae7f0c",
+			"name": "route query list",
+			"url": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/list",
+			"time": 8,
+			"responseCode": {
+				"code": 500,
+				"name": "Internal Server Error"
+			},
+			"tests": {
+				"Status test 200": false
+			},
+			"testPassFailCounts": {
+				"Status test 200": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"Status test 200": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 534,
+	"collection": {
+		"requests": [
+			{
+				"id": "47ddf317-eaf9-48d2-a95d-919dbf57f0b7",
+				"method": "GET"
+			},
+			{
+				"id": "53850ec7-d6a4-421a-b897-456c42c5639b",
+				"method": "GET"
+			},
+			{
+				"id": "84cf2763-a19e-4d75-ac29-903e72133f50",
+				"method": "GET"
+			},
+			{
+				"id": "1b97455d-db95-4ee3-9be3-1aa796021895",
+				"method": "DELETE"
+			},
+			{
+				"id": "01577c70-e8d0-4e9d-b2b5-0204bfa3c3db",
+				"method": "DELETE"
+			},
+			{
+				"id": "51f7ad06-537a-4aeb-bfcd-fef3d4692fb8",
+				"method": "DELETE"
+			},
+			{
+				"id": "8b93d517-8927-4f9c-bc34-da902db6b959",
+				"method": "POST"
+			},
+			{
+				"id": "3b9d6e6f-cf46-41e0-8df8-2af5eb7e6107",
+				"method": "POST"
+			},
+			{
+				"id": "d977af6d-6548-4c96-8e79-13e215512036",
+				"method": "POST"
+			},
+			{
+				"id": "01b959a1-4a15-4721-a92a-db9616eeec10",
+				"method": "POST"
+			},
+			{
+				"id": "fd057cd0-75a2-4579-95c5-eaedd5e1acc2",
+				"method": "POST"
+			},
+			{
+				"id": "e283f353-0a8d-4d10-9863-4e15353bcde3",
+				"method": "POST"
+			},
+			{
+				"id": "058d3b38-d1b1-4760-9698-d51e84629e7d",
+				"method": "POST"
+			},
+			{
+				"id": "9bc3a54e-1843-4a74-82e8-e815ee4ebad1",
+				"method": "POST"
+			},
+			{
+				"id": "da94a6b5-5408-4866-9d7f-3bae28bff020",
+				"method": "POST"
+			},
+			{
+				"id": "3fa8489f-3069-4456-8fc1-34980478ddd6",
+				"method": "POST"
+			},
+			{
+				"id": "cb7e353a-50db-4779-9d23-792faf9c441c",
+				"method": "POST"
+			},
+			{
+				"id": "ea9a2cc7-8cfd-41e5-9b65-e2ac1ede432d",
+				"method": "POST"
+			},
+			{
+				"id": "e8e42c5d-f6d5-421d-82bd-f6edeb3a3750",
+				"method": "POST"
+			},
+			{
+				"id": "fbc0390f-5d2a-4405-ac47-db292714b50f",
+				"method": "POST"
+			},
+			{
+				"id": "a9babd4c-3228-4ac6-b344-e0b816ddbfc7",
+				"method": "POST"
+			},
+			{
+				"id": "23aaee90-f48c-4f2e-9601-ee6cbb530b80",
+				"method": "POST"
+			},
+			{
+				"id": "9e476465-f912-4198-bff6-31759e29cd6b",
+				"method": "POST"
+			},
+			{
+				"id": "90d97dae-4537-4e58-a584-540ea1712a51",
+				"method": "PUT"
+			},
+			{
+				"id": "087871cc-92a4-4771-8900-dbaf1ca9a798",
+				"method": "PUT"
+			},
+			{
+				"id": "955e9ab4-f40b-4a82-a532-aa08d20091eb",
+				"method": "PUT"
+			},
+			{
+				"id": "9c0b6d1f-31c5-42ca-8d41-484be3e0307f",
+				"method": "PUT"
+			},
+			{
+				"id": "9d6f01ca-c481-47fb-95d8-bc9bcf7bf521",
+				"method": "PUT"
+			},
+			{
+				"id": "4092075f-d424-4cf9-979b-d1badaf8c615",
+				"method": "PUT"
+			},
+			{
+				"id": "9ea667a7-0bc5-4bef-9c47-d976a052dc99",
+				"method": "PUT"
+			},
+			{
+				"id": "1653db66-1baa-4be7-8f19-76a4fc45e148",
+				"method": "PUT"
+			},
+			{
+				"id": "f7707462-2c3a-4986-99df-aaaefa18d5dc",
+				"method": "PUT"
+			},
+			{
+				"id": "799d290e-d656-47d0-83ea-5a9c8d0e7db7",
+				"method": "PUT"
+			},
+			{
+				"id": "51e14571-a659-441f-8eb4-20d967b1a080",
+				"method": "PUT"
+			},
+			{
+				"id": "b1959b7a-774f-4491-a930-fa98b46ea668",
+				"method": "PUT"
+			},
+			{
+				"id": "e3ffcb9e-cc69-4d61-ab2b-3cad945a1155",
+				"method": "PUT"
+			},
+			{
+				"id": "c1430818-e89a-496d-8839-ea6b7efabc8f",
+				"method": "PUT"
+			},
+			{
+				"id": "4f3ba513-bab8-4fba-a998-030543a86244",
+				"method": "PUT"
+			},
+			{
+				"id": "0c196440-1511-4074-abe4-ccf73b1160c9",
+				"method": "PUT"
+			},
+			{
+				"id": "cc066a78-326a-49f2-97ea-5a6a9c961cc9",
+				"method": "PUT"
+			},
+			{
+				"id": "6c28d306-4638-4898-93b7-fcef113f611e",
+				"method": "GET"
+			},
+			{
+				"id": "7570b4b7-f82b-4d02-9d01-1b68674aa4ee",
+				"method": "GET"
+			},
+			{
+				"id": "56f37aba-a7e8-4fee-986e-a6f582148d79",
+				"method": "GET"
+			},
+			{
+				"id": "12e9832b-199c-4e9a-8069-5975f97c38d1",
+				"method": "GET"
+			},
+			{
+				"id": "af2f69ef-4283-4bbb-827a-6ae26a138803",
+				"method": "DELETE"
+			},
+			{
+				"id": "5670b72f-e534-447c-ac2b-37f2ac9f16f4",
+				"method": "DELETE"
+			},
+			{
+				"id": "70afca75-6121-46a9-8f68-283e931c67c5",
+				"method": "DELETE"
+			},
+			{
+				"id": "6e984b2b-e965-4a01-b01e-ff3f23ace31b",
+				"method": "POST"
+			},
+			{
+				"id": "424dfc88-2e37-4375-ac8d-1c77f687871b",
+				"method": "POST"
+			},
+			{
+				"id": "e34947d4-bc80-41e6-a463-731cc745b685",
+				"method": "POST"
+			},
+			{
+				"id": "27111231-6443-4471-9ef9-3d3ab04e53ee",
+				"method": "POST"
+			},
+			{
+				"id": "2bc5afe6-0b56-41ef-9db1-cee40ccfd9b3",
+				"method": "POST"
+			},
+			{
+				"id": "4b8a74e7-a900-4203-bc7f-936f22aaeffa",
+				"method": "POST"
+			},
+			{
+				"id": "c2f53a82-f353-486d-a7ab-e0c6d9a585c8",
+				"method": "POST"
+			},
+			{
+				"id": "ab7f0167-dac3-4133-9230-d3fb056c4915",
+				"method": "POST"
+			},
+			{
+				"id": "56a2ceff-4467-42c0-8dad-b8f35e2df421",
+				"method": "POST"
+			},
+			{
+				"id": "f51d3f03-e7d8-4655-acd9-5f9e5812a015",
+				"method": "POST"
+			},
+			{
+				"id": "50f6f105-3e11-4547-b59d-6814fb84ef81",
+				"method": "PUT"
+			},
+			{
+				"id": "e20c9352-8fca-498c-954a-f69e32b8400c",
+				"method": "PUT"
+			},
+			{
+				"id": "df1c37ed-3ea0-425c-8fc4-1f89759c223f",
+				"method": "PUT"
+			},
+			{
+				"id": "6af6fb40-4f8f-49d2-b00c-6eca9262d1a9",
+				"method": "PUT"
+			},
+			{
+				"id": "d8a28c97-2164-4f55-94fb-b5108977e4b6",
+				"method": "PUT"
+			},
+			{
+				"id": "29a80d73-37b5-461e-a76c-03ebd1d13770",
+				"method": "PUT"
+			},
+			{
+				"id": "f3ef43e4-cea2-4e6f-af88-022850a93315",
+				"method": "PUT"
+			},
+			{
+				"id": "4bbe7d9f-028f-4a1c-9238-7dc0d41274a3",
+				"method": "PUT"
+			},
+			{
+				"id": "64495fca-16c9-4d89-9494-2b47d9ceb665",
+				"method": "PUT"
+			},
+			{
+				"id": "9b39b842-78c4-45e4-9c46-ec44ec325110",
+				"method": "PUT"
+			},
+			{
+				"id": "355200ca-2a30-457b-85a6-90059a94e414",
+				"method": "PUT"
+			},
+			{
+				"id": "ab1bb396-aa55-4aec-ae81-8ecff18c3a53",
+				"method": "PUT"
+			},
+			{
+				"id": "ff9963b7-6cf6-4115-8723-a5ea3e678c6d",
+				"method": "GET"
+			},
+			{
+				"id": "0bffa2e8-e2e0-4c1d-9619-ba20d2ab93df",
+				"method": "GET"
+			},
+			{
+				"id": "5ea72c07-3302-40eb-8f4a-9958144e64a0",
+				"method": "GET"
+			},
+			{
+				"id": "71a19535-94e4-4c17-9ef9-0ac9a1911c49",
+				"method": "GET"
+			},
+			{
+				"id": "25bef788-9501-4ccc-8b67-380769aa9eff",
+				"method": "DELETE"
+			},
+			{
+				"id": "716ca70e-3366-4717-9105-fefe949c2398",
+				"method": "DELETE"
+			},
+			{
+				"id": "3227ea39-7875-4795-9095-a934a1745cdb",
+				"method": "DELETE"
+			},
+			{
+				"id": "59767b29-8dc7-42ea-946b-7570a24ff523",
+				"method": "POST"
+			},
+			{
+				"id": "a9b57b94-6a75-4435-88cd-61b59280412e",
+				"method": "POST"
+			},
+			{
+				"id": "6afb609f-660a-41d9-adc0-8389df8679f7",
+				"method": "POST"
+			},
+			{
+				"id": "7e92a30e-9530-4df9-95fc-b1eddefc9f3f",
+				"method": "POST"
+			},
+			{
+				"id": "71f28ad7-2586-4672-81ae-afb41e29f570",
+				"method": "POST"
+			},
+			{
+				"id": "ab905ed9-f0ac-4225-9741-2f70b50fba51",
+				"method": "POST"
+			},
+			{
+				"id": "4dbc02a4-c3ba-401b-8fdd-0f5137b44aaa",
+				"method": "PUT"
+			},
+			{
+				"id": "6e74928a-b4a1-48f9-a2b8-1502048e8892",
+				"method": "PUT"
+			},
+			{
+				"id": "002b5288-cd0c-450b-8457-ff4db587cee8",
+				"method": "PUT"
+			},
+			{
+				"id": "449d6ef5-a9fd-436b-aebc-27cf9aac2d53",
+				"method": "PUT"
+			},
+			{
+				"id": "562f7c19-f00d-4463-a1d1-ad3c28364ea8",
+				"method": "PUT"
+			},
+			{
+				"id": "d394ab3a-78e7-47c2-9912-69c339627bc2",
+				"method": "PUT"
+			},
+			{
+				"id": "0127a7dd-ee14-4a1d-b795-4684f0994a4d",
+				"method": "PUT"
+			},
+			{
+				"id": "9f036996-dc5e-47ce-b82f-093f5be2329e",
+				"method": "PUT"
+			},
+			{
+				"id": "b58f9e4d-5e4d-4635-b80c-8a46e6ae7f0c",
+				"method": "GET"
+			}
+		]
+	}
+}

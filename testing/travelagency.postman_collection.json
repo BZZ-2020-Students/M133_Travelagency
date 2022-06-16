@@ -1,0 +1,5425 @@
+{
+	"info": {
+		"_postman_id": "b1bcf4b8-3369-47e6-9429-da25d7820fde",
+		"name": "travelagency",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20899708"
+	},
+	"item": [
+		{
+			"name": "journey",
+			"item": [
+				{
+					"name": "read",
+					"item": [
+						{
+							"name": "successful",
+							"item": [
+								{
+									"name": "Journey query read successful",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/read/3dd25846-a915-4f68-b35f-b812be5a5c74",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"journey",
+												"read",
+												"3dd25846-a915-4f68-b35f-b812be5a5c74"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "failed",
+							"item": [
+								{
+									"name": "journey query read failed",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 404\", function () {\r",
+													"    pm.response.to.have.status(404);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/read/5dfba463-aaf-4794-9bde-904fb10be3a",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"journey",
+												"read",
+												"5dfba463-aaf-4794-9bde-904fb10be3a"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "journey query read failed missing uuid",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "journeyuuid",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/read/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"journey",
+												"read",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"item": [
+						{
+							"name": "successful",
+							"item": [
+								{
+									"name": "journey query delete successful",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/delete/49f3a8fb-d170-441e-bf56-c2fd0f25af9b",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"journey",
+												"delete",
+												"49f3a8fb-d170-441e-bf56-c2fd0f25af9b"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "failed",
+							"item": [
+								{
+									"name": "journey query delete fail wrong uuid",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "uuid",
+													"value": "fake",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/delete/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"journey",
+												"delete",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "journey query delete failed missing uuid",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "uuid",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/delete/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"journey",
+												"delete",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "create",
+					"item": [
+						{
+							"name": "successful",
+							"item": [
+								{
+									"name": "joureny query create",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "destinationUUID",
+													"value": "dd5a1584-c066-4498-b2f5-bfa972df8195",
+													"type": "text"
+												},
+												{
+													"key": "date",
+													"value": "11/10/2020",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "9.05",
+													"type": "text"
+												},
+												{
+													"key": "numbPers",
+													"value": "7",
+													"type": "text"
+												},
+												{
+													"key": "rating",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"journey",
+												"create"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "joureny query create fail date right characters",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "destinationUUID",
+													"value": "dd5a1584-c066-4498-b2f5-bfa972df8195",
+													"type": "text"
+												},
+												{
+													"key": "date",
+													"value": "12-12-2022",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "9.05",
+													"type": "text"
+												},
+												{
+													"key": "numbPers",
+													"value": "7",
+													"type": "text"
+												},
+												{
+													"key": "rating",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"journey",
+												"create"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "joureny query create fail date right characters",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "destinationUUID",
+													"value": "dd5a1584-c066-4498-b2f5-bfa972df8195",
+													"type": "text"
+												},
+												{
+													"key": "date",
+													"value": "12.12.2022",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "9.05",
+													"type": "text"
+												},
+												{
+													"key": "numbPers",
+													"value": "7",
+													"type": "text"
+												},
+												{
+													"key": "rating",
+													"value": "2",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"journey",
+												"create"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "failed",
+							"item": [
+								{
+									"name": "destinationuuid",
+									"item": [
+										{
+											"name": "joureny query create fail destination uuid wrong",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "fakeuuid",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "7",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query create fail no destination uuid",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "7",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"create"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "date",
+									"item": [
+										{
+											"name": "joureny query create fail date wrong characters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12(12)2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "7",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query create fail date wrong date",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "32-13-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "7",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query create fail no date",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "7",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"create"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "price",
+									"item": [
+										{
+											"name": "joureny query create fail price to small",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "0.04",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "7",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query create fail price to high",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "99999.96",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "7",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query create fail no price",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "7",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"create"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "numbPers",
+									"item": [
+										{
+											"name": "joureny query create fail numbPers to small",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "0.5",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query create fail numbPers to high",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "99999.90",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "11",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query create fail no numbPers",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"create"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "rating",
+									"item": [
+										{
+											"name": "joureny query create fail rating to small",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "0.5",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query create fail rating to big",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "0.5",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "6",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query create fail no rating",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"create"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "update",
+					"item": [
+						{
+							"name": "successfull",
+							"item": [
+								{
+									"name": "journey query update",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "journeyUUID",
+													"value": "3dd25846-a915-4f68-b35f-b812be5a5c74",
+													"type": "text"
+												},
+												{
+													"key": "destinationUUID",
+													"value": "dd5a1584-c066-4498-b2f5-bfa972df8195",
+													"type": "text"
+												},
+												{
+													"key": "date",
+													"value": "12/12/2022",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "9.05",
+													"type": "text"
+												},
+												{
+													"key": "numbPers",
+													"value": "5",
+													"type": "text"
+												},
+												{
+													"key": "rating",
+													"value": "3",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"journey",
+												"update"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "failed",
+							"item": [
+								{
+									"name": "journeyuuid",
+									"item": [
+										{
+											"name": "journey query update fail wrong uuid",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "journeyUUID",
+															"value": "fake",
+															"type": "text"
+														},
+														{
+															"key": "destinationUUID",
+															"value": "bcf5fbc1-59d8-40f0-bd00-e3e6e8a5e872",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12/12/2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "5",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "3",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "journey query update fail no journeyuuid",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "journeyUUID",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "destinationUUID",
+															"value": "bcf5fbc1-59d8-40f0-bd00-e3e6e8a5e872",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12/12/2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "5",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "3",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"update"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "destinationuuid",
+									"item": [
+										{
+											"name": "journey query update fail wrong destinationiuuid",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "journeyUUID",
+															"value": "ab13f67e-61b0-47b1-a4d4-4f4a2094f2f2",
+															"type": "text"
+														},
+														{
+															"key": "destinationUUID",
+															"value": "fake",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12/12/2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "5",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "3",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "journey query update fail no destinationuuid",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "journeyUUID",
+															"value": "ab13f67e-61b0-47b1-a4d4-4f4a2094f2f2",
+															"type": "text"
+														},
+														{
+															"key": "destinationUUID",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12/12/2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "5",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "3",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"update"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "date",
+									"item": [
+										{
+											"name": "joureny query update fail date wrong characters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12(12)2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "7",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query update fail date wrong date",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "32-13-3021",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "7",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query update fail no date",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "7",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"update"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "price",
+									"item": [
+										{
+											"name": "joureny query update fail price to small",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "0.04",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "7",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query update fail price to big",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "99999.96",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "7",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query update fail no price",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "7",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"update"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "numbPers",
+									"item": [
+										{
+											"name": "joureny query update fail numbPers to small",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "0.5",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query update fail numbPers to big",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "11",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query update fail no numbPers",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "2",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"update"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "rating",
+									"item": [
+										{
+											"name": "joureny query update fail rating to small",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "0.5",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query update fail rating to big",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "6",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "joureny query update fail no rating",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "736e0a86-9e95-44e7-8539-f62f1609ae1c",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "12-12-2022",
+															"type": "text"
+														},
+														{
+															"key": "price",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "numbPers",
+															"value": "1",
+															"type": "text"
+														},
+														{
+															"key": "rating",
+															"value": "",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"journey",
+														"update"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "journey query list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/journey/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Reisebuero-1.0-SNAPSHOT",
+								"resource",
+								"journey",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "destination",
+			"item": [
+				{
+					"name": "read",
+					"item": [
+						{
+							"name": "successful",
+							"item": [
+								{
+									"name": "destination query read successful",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/read/dd5a1584-c066-4498-b2f5-bfa972df8195",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"destination",
+												"read",
+												"dd5a1584-c066-4498-b2f5-bfa972df8195"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "failed",
+							"item": [
+								{
+									"name": "destination query read failed",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 404\", function () {\r",
+													"    pm.response.to.have.status(404);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/read/902d9927-15b8-4dd1-b07b-930e6a0f773",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"destination",
+												"read",
+												"902d9927-15b8-4dd1-b07b-930e6a0f773"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "destination query read failed wrong uuid",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "uuid",
+													"value": "fakeuuid",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/read/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"destination",
+												"read",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"item": [
+						{
+							"name": "successful",
+							"item": [
+								{
+									"name": "destination query delete",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/delete/ab1db4b0-41d5-46ea-80b6-83c246935d526",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"destination",
+												"delete",
+												"ab1db4b0-41d5-46ea-80b6-83c246935d526"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "failed",
+							"item": [
+								{
+									"name": "destination query delete wrong uuid",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "uuid",
+													"value": "fakeUUID",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/delete/",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"destination",
+												"delete",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "destination query delete no uuid",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "uuid",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/delete/",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"destination",
+												"delete",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "create",
+					"item": [
+						{
+							"name": "successful",
+							"item": [
+								{
+									"name": "destination query create",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "location",
+													"value": "hong kong",
+													"type": "text"
+												},
+												{
+													"key": "street",
+													"value": "aw",
+													"type": "text"
+												},
+												{
+													"key": "country",
+													"value": "china",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"destination",
+												"create"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "failed",
+							"item": [
+								{
+									"name": "location",
+									"item": [
+										{
+											"name": "destination query create fail to many characters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "location",
+															"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "aw",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "china",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "destination query create fail not enough characters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "location",
+															"value": "a",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "aw",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "china",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "destination query create fail no location",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "location",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "aw",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "china",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"create"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "street",
+									"item": [
+										{
+											"name": "destination query create fail to many characters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "location",
+															"value": "hongkong",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "china",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "destination query create fail not enough characters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "location",
+															"value": "hongkong",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "a",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "china",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "destination query create fail no street",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "location",
+															"value": "hongkong",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "china",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"create"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "country",
+									"item": [
+										{
+											"name": "destination query create fail to many characaters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "location",
+															"value": "hongkong",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "bahnhofstrasse",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "destination query create fail not enough characters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "location",
+															"value": "hongkong",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "bahnhofstrasse",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "a",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "destination query create fail no country",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "location",
+															"value": "hongkong",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "bahnhofstrasse",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"create"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "update",
+					"item": [
+						{
+							"name": "successful",
+							"item": [
+								{
+									"name": "destination query update",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "destinationUUID",
+													"value": "dd5a1584-c066-4498-b2f5-bfa972df8195",
+													"type": "text"
+												},
+												{
+													"key": "location",
+													"value": "horgen",
+													"type": "text"
+												},
+												{
+													"key": "street",
+													"value": "bahnhofstrasse",
+													"type": "text"
+												},
+												{
+													"key": "country",
+													"value": "schweiz",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"destination",
+												"update"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "failed",
+							"item": [
+								{
+									"name": "destinationuuid",
+									"item": [
+										{
+											"name": "destination query update fail wrong destinationuuid",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "fake",
+															"type": "text"
+														},
+														{
+															"key": "location",
+															"value": "horgen",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "bahnhofstrasse",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "schweiz",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "destination query update fail no destinationuuid",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "location",
+															"value": "horgen",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "bahnhofstrasse",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "schweiz",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"update"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "location",
+									"item": [
+										{
+											"name": "destination query update fail to many characters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "bcf5fbc1-59d8-40f0-bd00-e3e6e8a5e872",
+															"type": "text"
+														},
+														{
+															"key": "location",
+															"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "bahnhofstrasse",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "schweiz",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "destination query update fail not enough characters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "bcf5fbc1-59d8-40f0-bd00-e3e6e8a5e872",
+															"type": "text"
+														},
+														{
+															"key": "location",
+															"value": "a",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "bahnhofstrasse",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "schweiz",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "destination query update fail no location",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "bcf5fbc1-59d8-40f0-bd00-e3e6e8a5e872",
+															"type": "text"
+														},
+														{
+															"key": "location",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "bahnhofstrasse",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "schweiz",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"update"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "street",
+									"item": [
+										{
+											"name": "destination query update fail to many characters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "bcf5fbc1-59d8-40f0-bd00-e3e6e8a5e872",
+															"type": "text"
+														},
+														{
+															"key": "location",
+															"value": "bern",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "schweiz",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "destination query update fail not enough characters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "bcf5fbc1-59d8-40f0-bd00-e3e6e8a5e872",
+															"type": "text"
+														},
+														{
+															"key": "location",
+															"value": "bern",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "a",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "schweiz",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "destination query update fail no street",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "bcf5fbc1-59d8-40f0-bd00-e3e6e8a5e872",
+															"type": "text"
+														},
+														{
+															"key": "location",
+															"value": "bern",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "schweiz",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"update"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "country",
+									"item": [
+										{
+											"name": "destination query update fail to many characters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "bcf5fbc1-59d8-40f0-bd00-e3e6e8a5e872",
+															"type": "text"
+														},
+														{
+															"key": "location",
+															"value": "bern",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "bahnhofstrasse",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "destination query update fail not enough characters",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "bcf5fbc1-59d8-40f0-bd00-e3e6e8a5e872",
+															"type": "text"
+														},
+														{
+															"key": "location",
+															"value": "bern",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "bahnhofstrasse",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "a",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "destination query update fail no country",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "destinationUUID",
+															"value": "bcf5fbc1-59d8-40f0-bd00-e3e6e8a5e872",
+															"type": "text"
+														},
+														{
+															"key": "location",
+															"value": "bern",
+															"type": "text"
+														},
+														{
+															"key": "street",
+															"value": "bahnhofstrasse",
+															"type": "text"
+														},
+														{
+															"key": "country",
+															"value": "",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"destination",
+														"update"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "destination query list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/destination/list",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Reisebuero-1.0-SNAPSHOT",
+								"resource",
+								"destination",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "route",
+			"item": [
+				{
+					"name": "read",
+					"item": [
+						{
+							"name": "successful",
+							"item": [
+								{
+									"name": "route query read successful",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/read/7c4a7d15-4a6d-408c-9823-308a54ad2628",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"route",
+												"read",
+												"7c4a7d15-4a6d-408c-9823-308a54ad2628"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "failed",
+							"item": [
+								{
+									"name": "route query read failed",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "uuid",
+													"value": "fakeUUID",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/read/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"route",
+												"read",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "route query read wrong uuid",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "uuid",
+													"value": "fakeuuid",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/read",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"route",
+												"read"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "delete",
+					"item": [
+						{
+							"name": "successful",
+							"item": [
+								{
+									"name": "route query delete",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/delete/7ba5f54b-5e3e-413a-a6da-df1a9b199551",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"route",
+												"delete",
+												"7ba5f54b-5e3e-413a-a6da-df1a9b199551"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "failed",
+							"item": [
+								{
+									"name": "route query delete fail wrong uuid",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "uuid",
+													"value": "fakeUUId",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/delete/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"route",
+												"delete",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "route query delete fail no uuid",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 400\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "uuid",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/delete/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"route",
+												"delete",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "create",
+					"item": [
+						{
+							"name": "successful",
+							"item": [
+								{
+									"name": "route query create",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "distance",
+													"value": "9.05",
+													"type": "text"
+												},
+												{
+													"key": "journeyUUID",
+													"value": "c5cbb5ee-96a6-4bad-9f3c-d8274a34ca5d",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/create",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"route",
+												"create"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "failed",
+							"item": [
+								{
+									"name": "distance",
+									"item": [
+										{
+											"name": "route query create failed distance to small",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "distance",
+															"value": "0.04",
+															"type": "text"
+														},
+														{
+															"key": "journeyUUID",
+															"value": "b2c2808b-bb22-4fb6-babe-1500283292d5",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"route",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "route query create failed distance to big",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "distance",
+															"value": "99999.96",
+															"type": "text"
+														},
+														{
+															"key": "journeyUUID",
+															"value": "b2c2808b-bb22-4fb6-babe-1500283292d5",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"route",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "route query create failed distance nothing",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "distance",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "journeyUUID",
+															"value": "b2c2808b-bb22-4fb6-babe-1500283292d5",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"route",
+														"create"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "journeyuuid",
+									"item": [
+										{
+											"name": "route query create failed uuid",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "distance",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "journeyUUID",
+															"value": "fakeuuid",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"route",
+														"create"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "route query create no uuid",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "distance",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "journeyUUID",
+															"value": "",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"route",
+														"create"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "update",
+					"item": [
+						{
+							"name": "successful",
+							"item": [
+								{
+									"name": "route query update",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status test 200\", function () {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "routeUUID",
+													"value": "7c4a7d15-4a6d-408c-9823-308a54ad2628",
+													"type": "text"
+												},
+												{
+													"key": "distance",
+													"value": "11.05",
+													"type": "text"
+												},
+												{
+													"key": "journeyUUID",
+													"value": "c5cbb5ee-96a6-4bad-9f3c-d8274a34ca5d",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/update",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"Reisebuero-1.0-SNAPSHOT",
+												"resource",
+												"route",
+												"update"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "failed",
+							"item": [
+								{
+									"name": "distance",
+									"item": [
+										{
+											"name": "route query update failed distance to small",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "routeUUID",
+															"value": "7ba5f54b-5e3e-413a-a6da-df1a9b199551",
+															"type": "text"
+														},
+														{
+															"key": "distance",
+															"value": "0.04",
+															"type": "text"
+														},
+														{
+															"key": "journeyUUID",
+															"value": "75cc0808-f298-4859-8685-1ab53379f4ce",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"route",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "route query update failed distance to big",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "routeUUID",
+															"value": "7ba5f54b-5e3e-413a-a6da-df1a9b199551",
+															"type": "text"
+														},
+														{
+															"key": "distance",
+															"value": "99999.96",
+															"type": "text"
+														},
+														{
+															"key": "journeyUUID",
+															"value": "75cc0808-f298-4859-8685-1ab53379f4ce",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"route",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "route query update failed distance no value",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "routeUUID",
+															"value": "7ba5f54b-5e3e-413a-a6da-df1a9b199551",
+															"type": "text"
+														},
+														{
+															"key": "distance",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "journeyUUID",
+															"value": "75cc0808-f298-4859-8685-1ab53379f4ce",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"route",
+														"update"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "journeyuuid",
+									"item": [
+										{
+											"name": "route query update failed journeyuuid",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "routeUUID",
+															"value": "7ba5f54b-5e3e-413a-a6da-df1a9b199551",
+															"type": "text"
+														},
+														{
+															"key": "distance",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "journeyUUID",
+															"value": "fakeuuid",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"route",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "route query update no journeyuuid",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "routeUUID",
+															"value": "7ba5f54b-5e3e-413a-a6da-df1a9b199551",
+															"type": "text"
+														},
+														{
+															"key": "distance",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "journeyUUID",
+															"value": "",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"route",
+														"update"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "routeuuid",
+									"item": [
+										{
+											"name": "route query update failed routeuuid",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "routeUUID",
+															"value": "fakeUUID",
+															"type": "text"
+														},
+														{
+															"key": "distance",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "journeyUUID",
+															"value": "75cc0808-f298-4859-8685-1ab53379f4ce",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"route",
+														"update"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "route query update no routeuuid",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status test 400\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "routeUUID",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "distance",
+															"value": "9.05",
+															"type": "text"
+														},
+														{
+															"key": "journeyUUID",
+															"value": "75cc0808-f298-4859-8685-1ab53379f4ce",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"Reisebuero-1.0-SNAPSHOT",
+														"resource",
+														"route",
+														"update"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "route query list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status test 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/Reisebuero-1.0-SNAPSHOT/resource/route/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"Reisebuero-1.0-SNAPSHOT",
+								"resource",
+								"route",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
