@@ -1,0 +1,15 @@
+[ {
+  "routeUUID" : "7c4a7d15-4a6d-408c-9823-308a54ad2628",
+  "distance" : 11.05,
+  "journeyUUID" : "c5cbb5ee-96a6-4bad-9f3c-d8274a34ca5d",
+  "reise" : {
+    "journeyUUID" : "c5cbb5ee-96a6-4bad-9f3c-d8274a34ca5d",
+    "date" : "01-12-2123",
+    "price" : 4.5,
+    "numbPers" : 21,
+    "rating" : 3,
+    "destinationUUID" : "ab1db4b0-41d5-46ea-80b6-83c246935d52"
+  }
+}, {
+  "routeUUID" : "319c898b-51c1-4e2c-8565-617e4e397122",
+  "distance" : 9.05

@@ -1,0 +1,134 @@
+[ {
+  "journeyUUID" : "c5cbb5ee-96a6-4bad-9f3c-d8274a34ca5d",
+  "date" : "01-12-2123",
+  "price" : 4.5,
+  "numbPers" : 21,
+  "rating" : 3,
+  "destinationUUID" : "ab1db4b0-41d5-46ea-80b6-83c246935d52"
+}, {
+  "journeyUUID" : "c5cbb5ee-96a6-4bad-9f3c-d8274a34ca5d",
+  "date" : "01-12-2123",
+  "price" : 4.5,
+  "numbPers" : 21,
+  "rating" : 3,
+  "destinationUUID" : "ab1db4b0-41d5-46ea-80b6-83c246935d52"
+}, {
+  "journeyUUID" : "3dd25846-a915-4f68-b35f-b812be5a5c74",
+  "date" : "12/12/2022",
+  "price" : 9.05,
+  "numbPers" : 5,
+  "rating" : 3,
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195"
+}, {
+  "journeyUUID" : "9f11ded5-e4ca-4a9d-9c72-336018b38295",
+  "date" : "12-12-2022",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "bcf5fbc1-59d8-40f0-bd00-e3e6e8a5e872"
+}, {
+  "journeyUUID" : "34b4f05a-9d5d-44a8-867b-71f28f4bab0d",
+  "date" : "11/10/2020",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195"
+}, {
+  "journeyUUID" : "8ecbf2db-5c1a-4c4e-bcad-fc101a535560",
+  "date" : "12-12-2022",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195"
+}, {
+  "journeyUUID" : "e06fe2ff-70a9-45f6-af3e-fc3cbcac0095",
+  "date" : "12.12.2022",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195"
+}, {
+  "journeyUUID" : "d35fc66e-0615-45f9-bc84-ab7dc82a1575",
+  "date" : "12-12-2022",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195"
+}, {
+  "journeyUUID" : "9bbd88ad-c25d-4747-bacc-3396f000ced2",
+  "date" : "12.12.2022",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195"
+}, {
+  "journeyUUID" : "f7ecc739-2b71-4a00-af8f-8a521c2ddde1",
+  "date" : "12.12.2022",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195"
+}, {
+  "journeyUUID" : "f99970da-eebc-431d-afe9-bcb7a51e5e39",
+  "date" : "11/10/2020",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195"
+}, {
+  "journeyUUID" : "a9fc1e82-645a-45b6-a803-9102f4865f98",
+  "date" : "12-12-2022",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195"
+}, {
+  "journeyUUID" : "ea070bb1-ec33-4448-a805-fc762f3d06f1",
+  "date" : "12.12.2022",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195"
+}, {
+  "journeyUUID" : "0a22a740-78b3-4687-b0fe-e2179eaa0a06",
+  "date" : "11/10/2020",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195"
+}, {
+  "journeyUUID" : "e08dfd4c-bd32-421d-9ebd-27cd9aa2bee2",
+  "date" : "12-12-2022",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195"
+}, {
+  "journeyUUID" : "96c7eefd-b240-41ee-bf27-2ee75332429a",
+  "date" : "12.12.2022",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195"
+}, {
+  "journeyUUID" : "face4088-3080-438d-b1e0-471adf98c673",
+  "date" : "11/10/2020",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195"
+}, {
+  "journeyUUID" : "b8878d22-989e-4f82-b5d6-88460de389d6",
+  "date" : "12-12-2022",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195"
+}, {
+  "journeyUUID" : "54d1f522-b8cb-42e5-864c-00080c24ce29",
+  "date" : "12.12.2022",
+  "price" : 9.05,
+  "numbPers" : 7,
+  "rating" : 2,
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195"
+} ]

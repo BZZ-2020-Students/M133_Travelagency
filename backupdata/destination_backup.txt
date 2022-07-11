@@ -1,0 +1,31 @@
+[ {
+  "destinationUUID" : "ab1db4b0-41d5-46ea-80b6-83c246935d52",
+  "location" : "mueller",
+  "street" : "strasse",
+  "country" : "marc"
+}, {
+  "destinationUUID" : "dd5a1584-c066-4498-b2f5-bfa972df8195",
+  "location" : "horgen",
+  "street" : "bahnhofstrasse",
+  "country" : "schweiz"
+}, {
+  "destinationUUID" : "42ae6117-b5bb-4e15-b643-76b580eda7a8",
+  "location" : "hong kong",
+  "street" : "aw",
+  "country" : "china"
+}, {
+  "destinationUUID" : "69d36231-7387-4b96-af8c-be8234195ebf",
+  "location" : "hong kong",
+  "street" : "aw",
+  "country" : "china"
+}, {
+  "destinationUUID" : "78e3e479-7a1a-43d8-a0ac-bb07e9d94488",
+  "location" : "hong kong",
+  "street" : "aw",
+  "country" : "china"
+}, {
+  "destinationUUID" : "ff52a1c5-be68-4b34-9786-3b6e1e2a24f9",
+  "location" : "hong kong",
+  "street" : "aw",
+  "country" : "china"
+} ]
