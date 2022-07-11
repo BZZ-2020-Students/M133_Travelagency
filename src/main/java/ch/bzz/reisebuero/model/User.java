@@ -1,4 +1,4 @@
-package ch.bzz.bookultimate.model;
+package ch.bzz.reisebuero.model;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,6 +20,15 @@ public class User {
         setUsername("guest");
         setRole("guest");
     }
+
+    public User(String userUUID, String username, String password, String role, List<String> words) {
+        this.userUUID = userUUID;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.words = words;
+    }
+
 
     public String getUserUUID() {
         return userUUID;
