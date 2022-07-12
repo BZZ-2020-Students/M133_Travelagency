@@ -4,6 +4,7 @@ import ch.bzz.reisebuero.data.DataHandler;
 import ch.bzz.reisebuero.model.Destination;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.validation.constraints.*;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -22,6 +23,7 @@ public class Destinationservice {
      * reads a list of all destinations
      * @return  destinations as JSON
      */
+    @RolesAllowed({"user","admin"})
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
@@ -45,6 +47,7 @@ public class Destinationservice {
      * @param destinationUUID the key
      * @return destination
      */
+    @RolesAllowed({"user","admin"})
     @GET
     @Path("read/{uuid}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -69,6 +72,7 @@ public class Destinationservice {
      * @param destinationUUID  the key
      * @return  Response
      */
+    @RolesAllowed("admin")
     @DELETE
     @Path("delete/{uuid}")
     @Produces(MediaType.TEXT_PLAIN)
@@ -90,6 +94,7 @@ public class Destinationservice {
      * @param location,country,street
      * @return Response
      */
+    @RolesAllowed("admin")
     @Path("create")
     @POST
     @Produces(MediaType.TEXT_PLAIN)
@@ -129,6 +134,7 @@ public class Destinationservice {
      * @param destinationUUID the uuid of the destination
      * @return Response
      */
+    @RolesAllowed("admin")
     @PUT
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)

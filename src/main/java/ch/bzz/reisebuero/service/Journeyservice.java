@@ -4,6 +4,7 @@ import ch.bzz.reisebuero.data.DataHandler;
 import ch.bzz.reisebuero.model.Journey;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.validation.constraints.*;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
@@ -22,6 +23,7 @@ public class Journeyservice {
      * reads a list of all journeys
      * @return  journeys as JSON
      */
+    @RolesAllowed({"user","admin"})
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
@@ -45,6 +47,7 @@ public class Journeyservice {
      * @param journeyUUID the key
      * @return journey
      */
+    @RolesAllowed({"user","admin"})
     @GET
     @Path("read/{uuid}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -69,6 +72,7 @@ public class Journeyservice {
      * @param journeyUUID  the key
      * @return  Response
      */
+    @RolesAllowed("admin")
     @DELETE
     @Path("delete/{uuid}")
     @Produces(MediaType.TEXT_PLAIN)
@@ -89,6 +93,7 @@ public class Journeyservice {
      * @param destinationUUID the uuid of the destination
      * @return Response
      */
+    @RolesAllowed("admin")
     @Path("create")
     @POST
     @Produces(MediaType.TEXT_PLAIN)
@@ -147,6 +152,7 @@ public class Journeyservice {
      * @param destinationUUID the uuid of the destination
      * @return Response
      */
+    @RolesAllowed("admin")
     @PUT
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
